@@ -1,0 +1,41 @@
+.home-header-contain {
+    width: 100%;
+    height: 700px;
+    background-image: url("https://i.ibb.co/D7nV1wc/pexels-andrea-piacquadio-3760069.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    background-color: rgba(45, 57, 75, 0.5);
+}
+
+.text-header {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 17%;
+    color: white;
+    padding: 50px 50px;
+}
+
+.text-header span {
+    color: #f24d49;
+}
+
+.text-header h1 {
+    font-size: 68px;
+}
+
+.text-header p {
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+}

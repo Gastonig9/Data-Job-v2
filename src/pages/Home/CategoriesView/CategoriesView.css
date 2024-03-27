@@ -1,0 +1,44 @@
+.category-home-contain {
+    background-color: white;
+}
+
+.category-contain {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 55px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+
+.category-contain .card {
+    width: 25%;
+    background-color: white;
+    box-shadow: 2px 2px 12px 2px gray;
+    padding: 60px 40px;
+    text-align: center;
+    color: #4e5c67;
+    border-radius: 10px;
+}
+
+.category-contain .card:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.category-contain .card i {
+    font-size: 55px;
+    color: #ff626d;
+}
+
+.category-contain .card h3 {
+    font-size: 35px;
+}
+
+.category-contain .card h3:hover {
+    color: #ff626d;
+    transition: all 0.3s ease;
+}

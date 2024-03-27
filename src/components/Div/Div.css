@@ -1,0 +1,23 @@
+.div-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-contain h2 {
+    color: #4e5c67;
+    font-size: 42px;
+}
+
+.div-contain .one {
+    width: 250px;
+    height: 3px;
+    background-color: #ff626d;
+}
+
+.div-contain .two {
+    width: 120px;
+    height: 3px;
+    margin-top: 5px;
+    background-color: #ff626d;
+}

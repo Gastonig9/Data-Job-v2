@@ -1,0 +1,70 @@
+.navbar-contain {
+  width: 100%;
+  background-color: #2a3843;
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand {
+  width: 15%;
+  padding: 0px 20px;
+}
+
+.nav-brand img {
+  width: 150px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.navbar-contain ul {
+  width: 60%;
+  display: flex;
+  justify-content: start;
+  gap: 90px;
+  padding: 20px 0px;
+}
+
+.navbar-contain ul a {
+    text-decoration: none;
+}
+
+.navbar-contain ul li {
+    list-style: none;
+    font-size: 20px;
+    color: white;
+}
+
+.navbar-contain ul li:hover {
+    color: #f24d49;
+}
+
+.nav-login {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.nav-login h6 {
+    color: white;
+    font-size: 20px;
+}
+
+.nav-login h6:hover {
+    color: #f24d49;
+    cursor: pointer;
+}
+
+.nav-login h2 {
+    background-color: #f24d49;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 10px;
+}
+
+.nav-login h2:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
