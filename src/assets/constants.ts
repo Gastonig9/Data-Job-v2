@@ -4,7 +4,7 @@ import { Job } from "../models/job.model";
 export const jobs: Job[] = [
   {
     jobTitle: "Senior Web Developer",
-    description: "Join our team as a senior web developer and work on cutting-edge projects.",
+    description: "Únete a nuestro equipo como desarrollador web senior y trabaja en proyectos de vanguardia. Buscamos a alguien con experiencia en el desarrollo de aplicaciones web escalables y conocimientos profundos de tecnologías front-end y back-end.",
     location: "San Francisco, USA",
     salary: 100000,
     company: "Tech Innovations Inc.",
@@ -12,14 +12,14 @@ export const jobs: Job[] = [
     category: "Web Development",
     workday: "full-time",
     modality: "hybrid",
-    companyMail: "contact@techinnovations.com",
+    companyMail: "contacto@techinnovations.com",
     linkedin: "https://linkedin.com/techinnovations",
     jobImage: "https://example.com/job-image1.jpg",
     posted: new Date("2024-03-20")
   },
   {
     jobTitle: "Data Scientist",
-    description: "We're seeking a data scientist to analyze and interpret complex data sets.",
+    description: "Estamos buscando un científico de datos para analizar e interpretar conjuntos de datos complejos. El candidato ideal tendrá experiencia en el análisis estadístico, modelado predictivo y habilidades sólidas en programación.",
     location: "London, UK",
     salary: 90000,
     company: "Data Insights Ltd.",
@@ -27,14 +27,14 @@ export const jobs: Job[] = [
     category: "Data",
     workday: "full-time",
     modality: "in person",
-    companyMail: "contact@datainsights.com",
+    companyMail: null,
     linkedin: null,
     jobImage: "https://example.com/job-image2.jpg",
     posted: new Date("2024-03-21")
   },
   {
     jobTitle: "UI/UX Designer",
-    description: "We're hiring a UI/UX designer to create intuitive and visually appealing designs.",
+    description: "Estamos contratando un diseñador UI/UX para crear diseños intuitivos y visualmente atractivos. El candidato ideal debe tener experiencia en diseño de interfaces de usuario, prototipado y colaboración estrecha con equipos de desarrollo.",
     location: "Berlin, Germany",
     salary: 80000,
     company: "Design Solutions GmbH",
@@ -42,14 +42,14 @@ export const jobs: Job[] = [
     category: "Design",
     workday: "full-time",
     modality: "remote",
-    companyMail: "contact@designsolutions.com",
+    companyMail: "contacto@designsolutions.com",
     linkedin: "https://linkedin.com/designsolutions",
     jobImage: "https://example.com/job-image3.jpg",
     posted: new Date("2024-03-22")
   },
   {
     jobTitle: "Software Engineer",
-    description: "We're looking for a software engineer to develop high-quality software solutions.",
+    description: "Estamos buscando un ingeniero de software para desarrollar soluciones de software de alta calidad. El candidato ideal debe tener experiencia en el desarrollo de aplicaciones escalables y sólidos conocimientos en tecnologías como Java, Python o JavaScript.",
     location: "New York, USA",
     salary: 85000,
     company: "Software Innovations LLC",
@@ -57,14 +57,14 @@ export const jobs: Job[] = [
     category: "Web Development",
     workday: "full-time",
     modality: "remote",
-    companyMail: "contact@softwareinnovations.com",
+    companyMail: "contacto@softwareinnovations.com",
     linkedin: "https://linkedin.com/softwareinnovations",
     jobImage: "https://example.com/job-image4.jpg",
     posted: new Date("2024-03-23")
   },
   {
     jobTitle: "Marketing Manager",
-    description: "Join our marketing team and lead innovative campaigns to drive growth.",
+    description: "Únete a nuestro equipo de marketing y lidera campañas innovadoras para impulsar el crecimiento. Buscamos a alguien con experiencia en estrategias de marketing digital, análisis de mercado y habilidades sólidas de comunicación.",
     location: "Los Angeles, USA",
     salary: 95000,
     company: "Digital Marketing Solutions Inc.",
@@ -72,14 +72,14 @@ export const jobs: Job[] = [
     category: "Sales & Marketing",
     workday: "full-time",
     modality: "hybrid",
-    companyMail: "contact@dmsolutions.com",
+    companyMail: "contacto@dmsolutions.com",
     linkedin: null,
     jobImage: "https://example.com/job-image5.jpg",
     posted: new Date("2024-03-24")
   },
   {
     jobTitle: "HR Specialist",
-    description: "We're hiring an HR specialist to support our team and ensure smooth operations.",
+    description: "Estamos contratando un especialista en recursos humanos para apoyar a nuestro equipo y garantizar operaciones fluidas. El candidato ideal tendrá experiencia en reclutamiento, gestión del talento y desarrollo organizacional.",
     location: "Toronto, Canada",
     salary: 75000,
     company: "HR Solutions Co.",
@@ -87,7 +87,7 @@ export const jobs: Job[] = [
     category: "Management / HR",
     workday: "full-time",
     modality: "remote",
-    companyMail: "contact@hrsolutions.com",
+    companyMail: "contacto@hrsolutions.com",
     linkedin: "https://linkedin.com/hrsolutions",
     jobImage: "https://example.com/job-image6.jpg",
     posted: new Date("2024-03-25")

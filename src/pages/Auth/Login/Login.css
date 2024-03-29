@@ -1,0 +1,84 @@
+.login-contain {
+  display: flex;
+}
+
+.login-contain .other {
+  width: 40%;
+  background-color: #26292d;
+  padding: 40px 40px;
+}
+
+.login-contain .other h1 {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.login-contain .other p {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-contain .other button {
+  display: block;
+  margin: auto;
+  background-color: #ff626d;
+  color: white;
+  padding: 20px 50px;
+  font-size: 23px;
+  border: none;
+  border-radius: 10px;
+}
+
+.login-contain .other button:hover {
+  background-color: #2a3843;
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* FORM */
+
+.login-contain form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 40px 40px;
+}
+
+.login-contain form h1 {
+  color: #26292d;
+  text-align: center;
+  font-size: 40px;
+}
+
+.login-contain form input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e2eff4;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.login-contain form button {
+  display: block;
+  margin: auto;
+  background-color: #ff626d;
+  color: white;
+  padding: 20px 50px;
+  font-size: 23px;
+  border: none;
+  border-radius: 10px;
+}
+
+.login-contain form button:hover {
+  background-color: #2a3843;
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}

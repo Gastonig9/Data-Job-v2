@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    margin-top: 60px;
+}
+
+.col-1 {
+    width: 70%;
+}
+
+.col-2 {
+    width: 30%;
+}

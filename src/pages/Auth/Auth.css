@@ -1,0 +1,25 @@
+.auth-contain {
+    position: fixed;
+    top: 150px;
+    left: 25%;
+    background-color: white;
+
+    z-index: 9999;
+}
+
+.cancel-icon {
+    width: 6%;
+    position: absolute;
+    top: -9px;
+    left: 985px;
+    padding: 20px 0px;
+    background-color: #ff626d;
+    border-radius: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cancel-icon i {
+    font-size: 20px;
+    color: white;
+}

@@ -8,8 +8,8 @@ export interface Job {
     category: "Web Development" | "Data" | "Design" | "QA" | "Sales & Marketing" | "Management / HR"
     workday: "full-time" | "part-time"
     modality: "remote" | "hybrid" | "in person"
-    companyMail: string
+    companyMail: string | null
     linkedin: string | null
     jobImage: string
-    posted: Date
+    posted: string
 }

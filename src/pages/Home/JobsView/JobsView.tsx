@@ -1,8 +1,14 @@
+import React from "react";
 import "./JobsView.css";
-import { jobs } from "../../../assets/constants";
 import { Div } from "../../../components/Div/Div";
+import { Link } from "react-router-dom";
+import { Job } from "../../../models/job.model";
 
-export const JobsView = () => {
+interface JobsViewProps {
+  jobs: Job[];
+}
+
+export const JobsView: React.FC<JobsViewProps> = ({ jobs }) => {
   return (
     <div className="job-contain">
       <Div title="Jobs" />
@@ -24,7 +30,9 @@ export const JobsView = () => {
                 </div>
               </div>
               <div className="apply-job">
-                <button>Apply now</button>
+                <Link to={`/view-job/${job.jobTitle}`}>
+                  <button>Apply now</button>
+                </Link>
                 {job.linkedin && <button>Linkedin</button>}
               </div>
             </div>

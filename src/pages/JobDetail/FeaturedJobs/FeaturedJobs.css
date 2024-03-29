@@ -1,0 +1,54 @@
+.featured-contain a {
+  text-decoration: none;
+}
+
+.featured-title {
+  margin-bottom: 15px;
+}
+
+.featured-title h2 {
+  color: #4e5c67;
+  font-size: 27px;
+}
+
+.featured-title .one-featured {
+  display: flex;
+}
+
+.featured-title .one-featured .one {
+  width: 20%;
+  height: 5px;
+  background-color: #ff626d;
+}
+
+.featured-title .one-featured .two {
+  width: 40%;
+  height: 5px;
+  background-color: #e2eff4;
+}
+
+.featured-jobs {
+  width: 60%;
+}
+
+.featured-jobs .f-job-card {
+  padding: 10px 15px;
+}
+
+.featured-jobs .f-job-card:hover {
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  border-radius: 20px;
+  cursor: pointer;
+  transform: translateX(40px);
+  transition: all 0.3s ease;
+}
+
+.featured-jobs .f-job-card h2,
+h4 {
+  color: #4e5c67;
+}
+
+.featured-jobs .f-job-card h5 {
+  color: #663ace;
+  font-size: 17px;
+}
