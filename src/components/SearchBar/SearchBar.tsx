@@ -1,7 +1,8 @@
 import "./SearchBar.css";
-import { countries } from "../../assets/constants";
+import { countries, categories, seniority } from "../../assets/constants";
 import { CSeachBarProps } from "../../models/search.model";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const SearchBar: React.FC<CSeachBarProps> = ({
   forHeaderHome = false,
@@ -9,7 +10,11 @@ export const SearchBar: React.FC<CSeachBarProps> = ({
 }) => {
   const [country, setCountry] = useState("");
   const [category, setCategory] = useState("");
-  console.log(country)
+  const [senior, setsenior] = useState("")
+
+  const handleSeniorityChange = (event: any) => {
+    setsenior(event.target.value)
+  }
 
   const handleCountryChange = (event: any) => {
     setCountry(event.target.value);
@@ -24,9 +29,16 @@ export const SearchBar: React.FC<CSeachBarProps> = ({
       {forHeaderHome && (
         <form className="form-search-header">
           <div className="info-contain">
-            <input type="text" placeholder="Buscar empleo..." />
+          <select value={senior} onChange={handleSeniorityChange}>
+              <option value="">Select a seniority</option>
+              {seniority.map((country, index) => (
+                <option key={index} value={country}>
+                  {country}
+                </option>
+              ))}
+            </select>
             <select value={country} onChange={handleCountryChange}>
-              <option value="">Selecciona un país</option>
+              <option value="">Select a country</option>
               {countries.map((country, index) => (
                 <option key={index} value={country}>
                   {country}
@@ -34,10 +46,16 @@ export const SearchBar: React.FC<CSeachBarProps> = ({
               ))}
             </select>
             <select value={category} onChange={handleCategoryChange}>
-              <option value="">Selecciona una categoría</option>
-              {/* Aquí puedes agregar las opciones de categorías cuando estén disponibles */}
+              <option value="">Select a category</option>
+              {categories.map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              ))}
             </select>
-            <button type="submit">Buscar</button>
+            <Link to={`/filter?category=${category}&country=${country}&seniority=${senior}`}>
+              <button type="submit">Buscar</button>
+            </Link>
           </div>
         </form>
       )}

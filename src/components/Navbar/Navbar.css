@@ -46,6 +46,10 @@
     gap: 80px;
 }
 
+.nav-login a {
+  text-decoration: none;
+}
+
 .nav-login h6 {
     color: white;
     font-size: 20px;

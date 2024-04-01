@@ -1,0 +1,29 @@
+.options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px;
+  gap: 20px;
+}
+
+.options select {
+  width: 15%;
+  height: 80px;
+  padding: 10px;
+  font-size: 20px;
+  color: #4e5c67;
+  border: none;
+  background-color: #ffffff; 
+  transition: background-color 0.3s;
+}
+
+.options select:focus {
+  outline: none;
+  background-color: #4e5c67;
+  color: white;
+}
+
+.options select:hover {
+  background-color: #4e5c67;
+  color: white;
+}

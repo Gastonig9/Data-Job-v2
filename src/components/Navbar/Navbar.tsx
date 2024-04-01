@@ -7,8 +7,8 @@ interface NavbarProps {
 }
 export const Navbar: React.FC<NavbarProps> = ({ setOpenModal }) => {
   const openModalLogin = () => {
-    setOpenModal(true)
-  }
+    setOpenModal(true);
+  };
   return (
     <nav className="navbar-contain">
       <div className="nav-brand">
@@ -30,7 +30,11 @@ export const Navbar: React.FC<NavbarProps> = ({ setOpenModal }) => {
       </ul>
       <div className="nav-login">
         <h6 onClick={openModalLogin}>Login</h6>
-        <h2><i className="fa-solid fa-briefcase"></i> Post a Job </h2>
+        <Link to={`/post-job`}>
+          <h2>
+            <i className="fa-solid fa-briefcase"></i> Post a Job{" "}
+          </h2>
+        </Link>
       </div>
     </nav>
   );

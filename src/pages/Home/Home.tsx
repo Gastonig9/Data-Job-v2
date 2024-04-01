@@ -1,4 +1,4 @@
-import { HomeHeader } from ".";
+import { HomeHeader, HowItWorks  } from ".";
 import { CategoriesView } from "./CategoriesView/CategoriesView";
 import { JobsView } from "./JobsView/JobsView";
 import { JobService } from "../../services/JobService";
@@ -10,6 +10,7 @@ const Home = () => {
       <HomeHeader />
       <CategoriesView />
       <JobsView jobs={arrayJobs}/>
+      <HowItWorks/>
     </>
   );
 };

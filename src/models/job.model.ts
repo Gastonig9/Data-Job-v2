@@ -4,12 +4,13 @@ export interface Job {
     location: string
     salary: number
     company: string
-    seniority: "Senior" | "SemiSenior" | "Junior" | "Trainee"
-    category: "Web Development" | "Data" | "Design" | "QA" | "Sales & Marketing" | "Management / HR"
-    workday: "full-time" | "part-time"
-    modality: "remote" | "hybrid" | "in person"
+    seniority: "" | "Senior" | "SemiSenior" | "Junior" | "Trainee"
+    category: "" | "Web Development" | "Data" | "Design" | "QA" | "Sales & Marketing" | "Management / HR"
+    workday: "" | "full-time" | "part-time"
+    modality: "" |"remote" | "hybrid" | "in person"
     companyMail: string | null
     linkedin: string | null
     jobImage: string
-    posted: string
+    posted: string | Date
+    country: string
 }

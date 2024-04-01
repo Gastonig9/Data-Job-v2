@@ -1,0 +1,57 @@
+.post-job-detail-contain {
+  background-image: url("https://i.ibb.co/1JQC4XX/Los-riesgos-de-buscar-empleo-por-internet-0.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+.post-job-detail-contain .detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(30, 28, 28, 0.9);
+  height: 250px;
+}
+
+.post-job-detail-contain .detail h2 {
+  color: #fcf6f6;
+  font-size: 42px;
+}
+.post-job-detail-contain .detail .one-detail {
+  width: 250px;
+  height: 3px;
+  background-color: #fcf6f6;
+}
+
+.post-job-detail-contain .detail .two-detail {
+  width: 120px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: #fcf6f6;
+}
+
+
+form .button-post {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+form .button-post button {
+  display: block;
+  width: 20%;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  background-color: #ff626d;
+  color: white;
+  border-radius: 10px;
+}
+
+form .button-post button:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  background-color: #4e5c67;
+}

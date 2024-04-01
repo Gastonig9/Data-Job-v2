@@ -1,9 +1,9 @@
 .auth-contain {
+    width: 60%;
     position: fixed;
     top: 150px;
-    left: 25%;
+    left: 24%;
     background-color: white;
-
     z-index: 9999;
 }
 
@@ -11,12 +11,17 @@
     width: 6%;
     position: absolute;
     top: -9px;
-    left: 985px;
+    left: 95%;
     padding: 20px 0px;
     background-color: #ff626d;
     border-radius: 150px;
     text-align: center;
     cursor: pointer;
+}
+
+.cancel-icon:hover {
+    transform: scale(1.1);
+    transition: all 0.2s ease;
 }
 
 .cancel-icon i {

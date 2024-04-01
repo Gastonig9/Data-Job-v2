@@ -1,0 +1,53 @@
+
+
+.input-label {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 50px;
+    box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+    margin-bottom: 20px;
+    color: #4e5c67;
+}
+
+.input-contain .input-label label {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.input-contain .input-label input {
+    display: block;
+    width: 50%;
+    height: 60px;
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid gainsboro;
+    color: #4e5c67;
+}
+
+.input-contain .input-label textarea {
+    width: 50%;
+    height: 150px;
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid gainsboro;
+    resize: none;
+    color: #4e5c67;
+}
+
+.input-contain .input-label span {
+    color:  red;
+}
+
+.input-contain .input-label textarea:focus {
+    border: 5px solid gainsboro;
+    outline: none;
+}
+
+.input-contain .input-label input:focus{
+    border: 5px solid gainsboro;
+    outline: none;
+}
