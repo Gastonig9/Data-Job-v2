@@ -6,7 +6,7 @@ import { apiAuthService } from '../services/apiAuthService';
 export const store = configureStore({
   reducer: {
     [apiJobService.reducerPath]: apiJobService.reducer,
-    [apiAuthService.reducerPath]: apiJobService.reducer,
+    [apiAuthService.reducerPath]: apiAuthService.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiJobService.middleware, apiAuthService.middleware),
