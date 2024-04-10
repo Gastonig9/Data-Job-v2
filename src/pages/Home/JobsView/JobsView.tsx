@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./JobsView.css";
 import { Div } from "../../../components/Div/Div";
 import { Link } from "react-router-dom";
@@ -9,11 +9,19 @@ interface JobsViewProps {
 }
 
 export const JobsView: React.FC<JobsViewProps> = ({ jobs }) => {
+  const [jobsToShow, setJobsToShow] = useState<number>(3);
+
+  const handleShowMoreJobs = () => {
+    const remainingJobs = jobs.length - jobsToShow;
+    const nextJobsToShow = remainingJobs > 3 ? jobsToShow + 3 : jobs.length;
+    setJobsToShow(nextJobsToShow);
+  };
+
   return (
     <div className="job-contain">
       <Div title="Jobs" />
       <div className="jobs-vw-contain">
-        {jobs.map((job, index) => {
+        {jobs.slice(0, jobsToShow).map((job, index) => {
           return (
             <div key={index} className="card-job">
               <img src={"https://i.ibb.co/NjHMWzB/job-icon.jpg"} alt="" />
@@ -39,6 +47,16 @@ export const JobsView: React.FC<JobsViewProps> = ({ jobs }) => {
           );
         })}
       </div>
+      {jobsToShow < jobs.length && (
+        <div className="show-more-container">
+          <button onClick={handleShowMoreJobs}>Show more</button>
+        </div>
+      )}
+      {jobs.length === 0 && (
+        <div className="no-jobs-container">
+          <p>No more jobs available.</p>
+        </div>
+      )}
     </div>
   );
 };

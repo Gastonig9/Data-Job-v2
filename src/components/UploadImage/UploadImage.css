@@ -1,0 +1,33 @@
+.upload-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    margin-bottom: 80px;
+  }
+  
+  .upload-image input[type="file"] {
+    display: none; /* Oculta el input de tipo file */
+  }
+  
+  .upload-image label {
+    width: 30%;
+    text-align: center;
+    background-color: #2a3843; /* Color de fondo del botón */
+    color: white;
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Borde redondeado del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  .upload-image label::before {
+    content: 'Select Image'; /* Texto que aparecerá en lugar del botón predeterminado */
+  }
+  
+  .upload-image label:hover {
+    background-color: #e0e0e0;
+    color: #2a3843;
+  }
+  

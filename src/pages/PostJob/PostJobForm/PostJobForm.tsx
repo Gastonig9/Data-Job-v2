@@ -2,56 +2,84 @@ import { Input } from "../../../components/Input/Input";
 import { Div } from "../../../components/Div/Div";
 import "./PostJobForm.css";
 import { InputSelect } from "../InputSelect/InputSelect";
-import React, { useEffect, useState } from "react";
-import { getDateString } from "../../../helpers/helpers";
+import React, { useState } from "react";
 import { Job } from "../../../models";
+import { UploadImage } from "../../../components/UploadImage/UploadImage";
+import { usePostJobMutation } from "../../../services/apiJobService";
+import { Loader } from "../../../components/Loader/Loader";
 
 export const PostJobForm = () => {
-    const date = new Date()
+  const [postJob, { isError, isLoading, isSuccess, error }] = usePostJobMutation();
+  const date = new Date();
 
-    const [dataPost, setDataPost] = useState<Job>({
-        jobTitle: "",
-        description: "",
-        location: "",
-        salary: 0,
-        company: "",
-        seniority: "",
-        category: "",
-        workday: "",
-        modality: "",
-        companyMail: "",
-        linkedin: "",
-        jobImage: "https://example.com/job-image1.jpg",
-        posted: getDateString(date),
-        country: ""
-      })
+  const [charCount, setCharCount] = useState(0);
+  const [dataPost, setDataPost] = useState<Job>({
+    jobTitle: "",
+    description: "",
+    location: "",
+    salary: 0,
+    company: "",
+    seniority: "",
+    category: "",
+    workday: "",
+    modality: "",
+    companyMail: "",
+    linkedin: "",
+    jobImage: "https://example.com/job-image1.jpg",
+    posted: date,
+    country: "",
+  });
 
-      useEffect(() => {
-        console.log(dataPost)
-      }, [dataPost])
-      
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setDataPost((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    setCharCount(e.target.value.length);
+  };
 
-    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setDataPost(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setDataPost((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
-    };
+  const handleImageUpload = (imageData: string) => {
+    setDataPost((prevState) => ({
+      ...prevState,
+      jobImage: imageData,
+    }));
+  };
 
-    const handleSelectChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setDataPost(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const handlePostJob: React.FormEventHandler<HTMLFormElement> = (event) => {
-        event.preventDefault();
-        console.log(dataPost);
-    };
+  const handlePostJob: React.FormEventHandler<HTMLFormElement> = async (event) => {
+    event.preventDefault();
+    if(isError) {
+      console.log(error)
+    }
+    const postData = await postJob(dataPost);
+    setDataPost({
+      jobTitle: "",
+      description: "",
+      location: "",
+      salary: 0,
+      company: "",
+      seniority: "",
+      category: "",
+      workday: "",
+      modality: "",
+      companyMail: "",
+      linkedin: "",
+      jobImage: "",
+      posted: date,
+      country: "",
+    })
+    console.log(postData);
+  };
 
   return (
     <form onSubmit={handlePostJob}>
@@ -64,10 +92,23 @@ export const PostJobForm = () => {
       </div>
       <Div title="Share your post information" />
       <br />
-      <Input handleInputChange={handleInputChange} />
+      <Input handleInputChange={handleInputChange} count={charCount} />
       <InputSelect handleSelectChange={handleSelectChange} />
+      <UploadImage onImageUpload={handleImageUpload} />
       <div className="button-post">
-        <button type="submit">Post Job</button>
+        {isSuccess ? (
+          <button disabled className="btn-success">Job was posted</button>
+        ) : isError ? (
+          <button disabled className="btn-error">An error occurred</button>
+        ) : (
+          <button className="btn-submit" type="submit">
+            {isLoading ? (
+              <Loader isForButton={true} isForPage={false} />
+            ) : (
+              "Post a Job"
+            )}
+          </button>
+        )}
       </div>
     </form>
   );

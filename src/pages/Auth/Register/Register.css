@@ -86,3 +86,12 @@
   transform: translateY(-5px);
   transition: all 0.3s ease;
 }
+
+.messages-error {
+  margin-top: 10px;
+}
+
+.messages-error small {
+  display: block;
+  color: #2a3843;
+}

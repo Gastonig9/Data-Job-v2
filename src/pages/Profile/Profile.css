@@ -1,0 +1,41 @@
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    background-color: #f7f7f7;
+    padding: 20px 60px;
+  }
+  
+  .section {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
+  .section1 {
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2; /* Ocupa 2 filas */
+  }
+
+  .section2 {
+    width: 75%;
+  }
+
+  .section3 {
+    width: 80%;
+    height: 300px;
+  }
+  
+  .section4 {
+    grid-row: span 2; /* Ocupa 2 filas */
+    height: 200px;
+  }
+  
+  .section6 {
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2; /* Ocupa 2 filas */
+  }
+  

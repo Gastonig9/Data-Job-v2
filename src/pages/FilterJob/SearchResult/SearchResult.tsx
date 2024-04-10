@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { JobService } from "../../../services/JobService";
 import { Job } from "../../../models/job.model";
 import "./SearchResult.css";
+import { Loader } from "../../../components/Loader/Loader";
 
 export const SearchResult = () => {
   const location = useLocation();
@@ -12,48 +13,64 @@ export const SearchResult = () => {
   const seniority = queryParams.get("seniority") ?? undefined;
 
   const [data, setData] = useState<Job[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const resultsCount = data.length;
 
   useEffect(() => {
-    const dataFilter = new JobService().getJobByCategorieAndCountry(
-      category,
-      country,
-      seniority
-    );
-    setData(dataFilter);
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const dataFilter = await new JobService().getJobByCategorieAndCountry(
+          category,
+          country,
+          seniority
+        );
+        setData(dataFilter);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching jobs:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [category, country, seniority]);
 
   return (
     <div className="search-result-contain">
       <small>
-        <span>{category ? category + " " + "/" : ""}</span>{" "}
-        <span>{country ? country + " " + "/" : ""}</span>{" "}
-        <span>{seniority ? seniority + "/" : ""}</span>
+        <span>{category ? category + " / " : ""}</span>{" "}
+        <span>{country ? country + " / " : ""}</span>{" "}
+        <span>{seniority ? seniority + " / " : ""}</span>
       </small>
       <h1>
         <span>Search completed.</span> {resultsCount} results found.
       </h1>
-      <div className="card-results">
-        {data.map((job, index) => (
-          <div key={index} className="card-result">
-            <div className="info">
-              <h2>{job.jobTitle}</h2>
-              <p>
-                Location: <strong>{job.location}</strong>
-              </p>
-              <p>
-                Salary: <strong>{job.salary}</strong>
-              </p>
+      {loading ? (
+        <Loader isForPage={true} isForButton={false}/>
+      ) : (
+        <div className="card-results">
+          {data.map((job, index) => (
+            <div key={index} className="card-result">
+              <div className="info">
+                <h2>{job.jobTitle}</h2>
+                <p>
+                  Location: <strong>{job.location}</strong>
+                </p>
+                <p>
+                  Salary: <strong>{job.salary}</strong>
+                </p>
+              </div>
+              <div className="buttons">
+                <Link to={`/view-job/${job.jobTitle}`}>
+                  <button>Apply now</button>
+                </Link>
+                {job.linkedin && <button>Linkedin</button>}
+              </div>
             </div>
-            <div className="buttons">
-              <Link to={`/view-job/${job.jobTitle}`}>
-                <button>Apply now</button>
-              </Link>
-              {job.linkedin && <button>Linkedin</button>}
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,90 @@
+.p-info-contain {
+    display: flex;
+    color: #2a3843;
+}
+
+/* PROFILE IMG */
+
+.p-info-contain .profile-img {
+    padding: 20px 50px;
+    position: relative;
+}
+
+.p-info-contain img {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+.p-info-contain .profile-img .change-icon {
+    position: absolute;
+    top: 5px;
+    left: 80%;
+    padding: 10px;
+    border-radius: 70px;
+}
+
+.p-info-contain .profile-img .change-icon i {
+    font-size: 30px;
+    color: #2a3843;
+}
+
+.p-info-contain .profile-img .change-icon:hover {
+    cursor: pointer;
+    background-color: rgb(207, 205, 205);
+    color: #f24d49;
+}
+
+/* PROFILE INFO */
+
+.p-info-contain .profile-info {
+    width: 76%;
+    padding: 20px 50px;
+    text-align: start;
+}
+
+.p-info-contain .profile-info .data {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 50px;
+}
+
+.p-info-contain .profile-info .data div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+/* UPDATE IMAGE */
+
+.edit-image-contain {
+    width: 50%;
+    height: 300px;
+    position: fixed;
+    top: 100px;
+    left: 500px;
+    background-color: white;
+    color: #2a3843;
+    border: 5px solid #2a3843;
+    border-radius: 20px;
+    z-index: 999;
+}
+
+.edit-image-contain button {
+    width: 20%;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #f24d49;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.edit-image-contain button:hover {
+    cursor: pointer;
+    background-color: #2a3843;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}

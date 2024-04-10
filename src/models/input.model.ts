@@ -9,4 +9,6 @@ export interface InputConfig {
     required?: boolean;
     disabled?: boolean;
     className?: string;
+    min?: number;
+    max?: number;
   }

@@ -18,6 +18,7 @@
   padding: 20px 30px;
   border-radius: 10px;
   background-color: white;
+  margin-bottom: 50px;
 
 }
 
@@ -78,5 +79,27 @@
     background-color: #4e5c67;
     cursor: pointer;
     transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.show-more-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.show-more-container button{
+    width: 20%;
+    border: none;
+    background-color: #ff626d;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.show-more-container button:hover {
+    background-color: #4e5c67;
     transition: all 0.3s ease;
 }

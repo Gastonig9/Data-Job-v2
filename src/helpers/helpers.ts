@@ -1,3 +1,5 @@
+
+
 export function getDateString(fechaString: string | Date): string {
   const fecha = new Date(fechaString);
 

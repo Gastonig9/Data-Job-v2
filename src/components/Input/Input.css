@@ -51,3 +51,7 @@
     border: 5px solid gainsboro;
     outline: none;
 }
+
+.input-contain .input-label .count-red {
+    color: red;
+}

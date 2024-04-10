@@ -1,0 +1,46 @@
+.profile-skills-container {
+  color: #2a3843;
+}
+
+.profile-skills-container .input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-skills-container .input-container input {
+  width: 40%;
+  height: 60px;
+  font-size: 22px;
+  padding: 10px 20px;
+}
+
+.profile-skills-container .input-container button {
+  width: 20%;
+  height: 60px;
+  border: none;
+  background-color: #f24d49;
+  color: white;
+  font-size: 22px;
+}
+
+.profile-skills-container .skills-container {
+    margin-top: 50px;
+}
+
+
+.profile-skills-container .skills-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-skills-container .skills-container ul li {
+    list-style: none;
+    font-size: 20px;
+    background-color: #f24d49;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

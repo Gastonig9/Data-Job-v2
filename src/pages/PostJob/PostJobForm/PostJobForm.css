@@ -30,7 +30,6 @@
   background-color: #fcf6f6;
 }
 
-
 form .button-post {
   width: 100%;
   display: flex;
@@ -38,7 +37,7 @@ form .button-post {
   margin-bottom: 30px;
 }
 
-form .button-post button {
+form .button-post .btn-submit {
   display: block;
   width: 20%;
   height: 60px;
@@ -49,9 +48,31 @@ form .button-post button {
   border-radius: 10px;
 }
 
-form .button-post button:hover {
+form .button-post .btn-submit:hover {
   cursor: pointer;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   background-color: #4e5c67;
+}
+
+form .button-post .btn-success {
+  display: block;
+  width: 20%;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  background-color: #02c33f;
+  color: white;
+  border-radius: 10px;
+}
+
+form .button-post .btn-error {
+  display: block;
+  width: 20%;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  background-color: #e42b2b;
+  color: white;
+  border-radius: 10px;
 }

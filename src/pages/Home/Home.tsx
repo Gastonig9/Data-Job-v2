@@ -1,16 +1,20 @@
-import { HomeHeader, HowItWorks  } from ".";
-import { CategoriesView } from "./CategoriesView/CategoriesView";
-import { JobsView } from "./JobsView/JobsView";
-import { JobService } from "../../services/JobService";
+import { HomeHeader, HowItWorks } from '.';
+import { CategoriesView } from './CategoriesView/CategoriesView';
+import { JobsView } from './JobsView/JobsView';
+import { useGetJobsQuery } from '../../services/apiJobService';
+import { Loader } from '../../components/Loader/Loader';
 
 const Home = () => {
-  const arrayJobs = new JobService().getJobs()
+  const { data: jobs, isLoading } = useGetJobsQuery([]);
+
+  if (isLoading) return <Loader isForButton={true} isForPage={false}/>;
+
   return (
     <>
       <HomeHeader />
       <CategoriesView />
-      <JobsView jobs={arrayJobs}/>
-      <HowItWorks/>
+      {jobs && <JobsView jobs={jobs} />}
+      <HowItWorks />
     </>
   );
 };
