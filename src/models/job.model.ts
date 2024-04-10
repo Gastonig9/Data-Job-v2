@@ -1,5 +1,5 @@
 export interface Job {
-    _id:string;
+    _id?:string;
     jobTitle: string
     description: string
     location: string

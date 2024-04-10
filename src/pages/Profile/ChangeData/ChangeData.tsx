@@ -35,7 +35,7 @@ export const ChangeData: React.FC<ChangeDataProps> = ({ uid }) => {
   };
 
   const handleChangeDataSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     field: keyof ChangeUserData
   ) => {
     event.preventDefault();
@@ -67,7 +67,7 @@ export const ChangeData: React.FC<ChangeDataProps> = ({ uid }) => {
                 id={input.id}
                 name={input.name}
                 placeholder={input.placeholder}
-                value={updateUserInfo[input.name] || ""}
+                value={updateUserInfo[input.name as keyof ChangeUserData] || ""}
                 onChange={handleInputChange}
                 required={input.required}
                 min={input.min}
