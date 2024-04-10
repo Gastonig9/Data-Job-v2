@@ -1,4 +1,4 @@
 export const BASE_URL = {
-    prod: process.env.BASE_URL_PROD,
-    dev: process.env.BASE_URL_DEV
+    prod: 'https://data-job-api-5238.onrender.com',
+    dev: 'https://localhost:3000'
 }
