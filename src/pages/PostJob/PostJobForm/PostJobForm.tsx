@@ -7,9 +7,14 @@ import { Job } from "../../../models";
 import { UploadImage } from "../../../components/UploadImage/UploadImage";
 import { usePostJobMutation } from "../../../services/apiJobService";
 import { Loader } from "../../../components/Loader/Loader";
+import { useJwt } from "react-jwt";
+import { User } from "../../../models/user.model";
 
 export const PostJobForm = () => {
-  const [postJob, { isError, isLoading, isSuccess, error }] = usePostJobMutation();
+  const token = localStorage.getItem("token");
+  const { decodedToken } = useJwt<User>(token || "");
+  const [postJob, { isError, isLoading, isSuccess, error }] =
+    usePostJobMutation();
   const date = new Date();
 
   const [charCount, setCharCount] = useState(0);
@@ -56,12 +61,17 @@ export const PostJobForm = () => {
     }));
   };
 
-  const handlePostJob: React.FormEventHandler<HTMLFormElement> = async (event) => {
+  const handlePostJob: React.FormEventHandler<HTMLFormElement> = async (
+    event
+  ) => {
     event.preventDefault();
-    if(isError) {
-      console.log(error)
+    if (isError) {
+      console.log(error);
     }
-    const postData = await postJob(dataPost);
+    const postData = await postJob({
+      newJob: dataPost,
+      userId: decodedToken?.userId,
+    });
     setDataPost({
       jobTitle: "",
       description: "",
@@ -77,7 +87,7 @@ export const PostJobForm = () => {
       jobImage: "",
       posted: date,
       country: "",
-    })
+    });
     console.log(postData);
   };
 
@@ -97,9 +107,13 @@ export const PostJobForm = () => {
       <UploadImage onImageUpload={handleImageUpload} />
       <div className="button-post">
         {isSuccess ? (
-          <button disabled className="btn-success">Job was posted</button>
+          <button disabled className="btn-success">
+            Job was posted
+          </button>
         ) : isError ? (
-          <button disabled className="btn-error">An error occurred</button>
+          <button disabled className="btn-error">
+            An error occurred
+          </button>
         ) : (
           <button className="btn-submit" type="submit">
             {isLoading ? (

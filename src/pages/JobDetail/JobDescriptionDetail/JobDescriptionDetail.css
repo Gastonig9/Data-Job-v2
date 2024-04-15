@@ -42,3 +42,41 @@
     font-size: 20px;
     color: #3c464f
 }
+
+.buttons-apply {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.buttons-apply a {
+    width: 30%;
+}
+
+.buttons-apply .toLinkedin {
+    width: 100%;
+    background-color: rgb(6, 85, 117);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttons-apply .toCompany {
+    width: 30%;
+    background-color: #ff626d;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.buttons-apply .toCompany:hover {
+    background-color: #3c464f;
+    transition: all ease 0.3s;
+}

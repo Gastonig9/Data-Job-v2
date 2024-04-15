@@ -19,6 +19,7 @@ const JobDetail = () => {
   const { title } = useParams();
   const { data: job } = useGetJobByTitleQuery(title ? title : "");
   const [featuredJobs, setFeaturedJobs] = useState<Job[] | undefined>([]);
+  console.log(job)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,6 +59,8 @@ const JobDetail = () => {
             imgDetail={job.jobImage}
             companyDetail={job.company}
             postedDetail={getDateString(job.posted)}
+            linkedinDetail={job.linkedin}
+            author={job.author}
           />
         </div>
         <div className="col-2">

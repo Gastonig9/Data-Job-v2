@@ -1,0 +1,50 @@
+.restore-pass-contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.restore-pass-contain .restore {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    text-align: center;
+}
+
+
+.restore-pass-contain .restore h1 {
+    color: #4e5c67;
+}
+
+.restore-pass-contain .restore input {
+    display: block;
+    width: 50%;
+    height: 60px;
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid gainsboro;
+    color: #4e5c67;
+}
+
+.restore-pass-contain .restore button {
+    width: 30%;
+    padding: 10px 20px;
+    background-color: #ff626d;
+    font-size: 22px;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.restore-pass-contain .restore button:hover {
+    cursor:pointer;
+    background-color: #4e5c67;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}

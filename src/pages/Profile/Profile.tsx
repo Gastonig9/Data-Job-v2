@@ -4,12 +4,14 @@ import { ChangePassword } from './ChangePassword/ChangePassword';
 import { ChangeRole } from './ChangeRole/ChangeRole';
 import { PrincipalInfo } from './PrincipalInfo/PrincipalInfo';
 import './Profile.css';
+import { ProfileRole } from './ProfileRole/ProfileRole';
 import ProfileSkills from './ProfileSkills/ProfileSkills';
 import { useJwt } from "react-jwt";
 
 const Profile = () => {
   const token = localStorage.getItem("token");
   const { decodedToken } = useJwt<User>(token || "");
+  console.log(decodedToken)
   
   
 
@@ -23,7 +25,7 @@ const Profile = () => {
         <ChangeData uid={decodedToken?.userId}/>
       </div>
       <div className="section section3">
-        <ChangePassword/>
+        <ChangePassword email={decodedToken?.email}/>
       </div>
       <div className="section section4">
         <ChangeRole uid={decodedToken?.userId}/>
@@ -32,7 +34,9 @@ const Profile = () => {
       <div className="section section5">
         <ProfileSkills uid={decodedToken?.userId}/>
       </div>
-      <div className="section section6">Sección 6</div>
+      <div className="section section6">
+        <ProfileRole uid={decodedToken?.userId} role={decodedToken?.role}/>
+      </div>
     </div>
   );
 };

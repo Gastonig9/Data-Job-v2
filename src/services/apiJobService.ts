@@ -2,10 +2,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Job } from '../models';
 import { BASE_URL } from '../assets/url';
 
+const baseQuery = fetchBaseQuery({
+    baseUrl: BASE_URL.prod,
+});
 
 export const apiJobService = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL.prod }),
+    baseQuery,
     endpoints: (builder) => ({
         getJobs: builder.query<Job[], []>({
             query: () => '/jobs',
@@ -13,9 +16,9 @@ export const apiJobService = createApi({
         getJobByTitle: builder.query<Job | undefined, string>({
             query: (title: string) => `/jobs/${title}`,
         }),
-        postJob: builder.mutation<Job, Partial<Job>>({
-            query: (newJob) => ({
-                url: '/jobs',
+        postJob: builder.mutation<Job, { newJob: Partial<Job>; userId: string }>({
+            query: ({ newJob, userId }) => ({
+                url: `/jobs/post-job/${userId}`,
                 method: 'POST',
                 body: newJob,
             }),
