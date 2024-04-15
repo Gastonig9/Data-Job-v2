@@ -9,35 +9,33 @@
   width: 100%;
   gap: 20px;
   padding: 20px 10px;
-  background-color: #f24d49;
   color: white;
   cursor: pointer;
 }
 
 .hello img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
   display: block;
 }
 
 .hello span {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .dropdown-content {
   width: 96%;
   display: none;
   position: absolute;
-  background-color: #f24d49;
-  top: 74px;
+  background-color: #2a3843;
+  top: 70px;
   color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
   cursor: pointer;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -47,36 +45,16 @@
 
 .dropdown:hover .dropdown-content a {
   text-decoration: none;
+  font-size: 18px;
 }
 
 .dropdown:hover .dropdown-content p {
     color: white;
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .dropdown:hover .dropdown-content p:hover {
-  background-color: white;
-  color: #2a3843;
-  padding: 20px;
-}
-
-.dropdown:hover .dropdown-content .post-p {
-  color: white;
-  padding: 10px;
-}
-
-.dropdown:hover .dropdown-content .disabled-p {
-  background-color: gray;
-  padding: 10px;
-  color: rgb(254, 252, 252);
-}
-
-.dropdown:hover .dropdown-content .disabled-p:hover {
-  background-color: gray;
-  padding: 20px;
-  color: rgb(254, 252, 252);
-}
-
-.dropdown:hover .dropdown-content .post-p:hover {
   background-color: white;
   color: #2a3843;
   padding: 20px;

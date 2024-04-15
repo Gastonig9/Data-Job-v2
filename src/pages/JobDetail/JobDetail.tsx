@@ -58,6 +58,8 @@ const JobDetail = () => {
             imgDetail={job.jobImage}
             companyDetail={job.company}
             postedDetail={getDateString(job.posted)}
+            linkedinDetail={job.linkedin}
+            author={job.author}
           />
         </div>
         <div className="col-2">

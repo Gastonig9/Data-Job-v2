@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AddUserSkill, ChangeUserData, ChangeUserImage, ChangeUserRole } from "../models/user.model";
+import { AddUserSkill, ChangePassword, ChangeUserData, ChangeUserImage, ChangeUserRole } from "../models/user.model";
 import { BASE_URL } from "../assets/url";
 
 export class UserService {
@@ -31,6 +31,26 @@ export class UserService {
         }
     }
 
+    async getUserRequestJobs(userId: string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/get-user-applicants/${userId}`);
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
+        }
+    }
+
+    async getUserSavedJobs(userId: string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/get-saved-jobs/${userId}`);
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
+        }
+    }
+
     async saveJobInUserProfile(userId: string | undefined, jobId: string | undefined) {
         const response = await fetch(`${this.baseUrl}/user/save-job/${userId}/${jobId}`, {
             method: "POST",
@@ -43,7 +63,7 @@ export class UserService {
             const dataError = await response.json();
             return dataError;
         }
-    } 
+    }
 
     async updateUserInfo(userId: string | undefined, dataRegister: ChangeUserData) {
         const response = await fetch(`${this.baseUrl}/user/update-info/${userId}`, {
@@ -60,6 +80,16 @@ export class UserService {
         } else {
             const dataError = await response.json();
             return dataError;
+        }
+    }
+
+    async sendApplyUser(userId: string | undefined, jobId: string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/request-job/${userId}/${jobId}`);
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
         }
     }
 
@@ -128,6 +158,46 @@ export class UserService {
         } else {
             const dataError = await response.json();
             return dataError;
+        }
+    }
+
+    async deleteUserJobRequest(userId: string | undefined, applicantId: string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/delete-request/${userId}/${applicantId}`, {
+                method: 'DELETE'
+            });
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
+        }
+    }
+
+    async sendEmailRecoverPass(email:string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/send-email-recover/${email}`, {
+                method: 'POST'
+            });
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
+        }
+    } 
+
+    async changeUserPassword(token: string | undefined, newPassword: ChangePassword) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/recover-password/${token}`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newPassword),
+            });
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
         }
     }
 

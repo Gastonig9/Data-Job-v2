@@ -1,0 +1,72 @@
+.info-footer {
+  width: 100%;
+  background-image: url("../../assets/work2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.info-footer {
+  background-color: rgba(234, 22, 22, 0.9);
+  display: flex;
+}
+
+.info-footer .img-des-f {
+  width: 40%;
+  padding: 20px 30px;
+  color: white;
+}
+
+.info-footer .img-des-f p {
+  width: 80%;
+  font-size: 19px;
+}
+
+.info-footer .img-des-f img {
+  width: 400px;
+  height: 350px;
+}
+
+.info-footer .contact {
+  width: 40%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-footer .contact h1 {
+    color: white;
+}
+
+.info-footer .contact div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.info-footer .contact div:hover {
+  color: #e5706e;
+}
+
+.info-footer .contact div h3 {
+  font-size: 20px;
+}
+
+.info-footer .contact div i {
+  font-size: 20px;
+}
+
+.info-footer .copyright {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+
+.info-footer .copyright i {
+    font-size: 27px;
+}

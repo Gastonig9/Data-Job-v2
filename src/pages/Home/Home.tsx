@@ -7,7 +7,7 @@ import { Loader } from '../../components/Loader/Loader';
 const Home = () => {
   const { data: jobs, isLoading } = useGetJobsQuery([]);
 
-  if (isLoading) return <Loader isForButton={true} isForPage={false}/>;
+  if (isLoading) return <Loader isForButton={false} isForPage={true}/>;
 
   return (
     <>

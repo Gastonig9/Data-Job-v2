@@ -17,7 +17,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
     email: "",
     description: "",
     phone: 0,
-    imageProfile: "",
+    userImage: "",
     jobSaved: [],
     location: "",
     role: "user",
@@ -25,7 +25,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
   });
   const [showImage, setshowImage] = useState<boolean>(false);
   const [newImage, setnewImage] = useState<ChangeUserImage>({
-    imageProfile: "",
+    userImage: "",
   });
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
   };
 
   const handleImageProfileUpload = (imageData: string) => {
-    setnewImage({ imageProfile: imageData });
+    setnewImage({ userImage: imageData });
   };
 
   const handleSubmitNewImage = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -75,7 +75,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
       )}
       <div className="p-info-contain">
         <div className="profile-img">
-          <img src={userProfile.imageProfile || imgProfile} alt="" />
+          <img src={userProfile.userImage || imgProfile} alt="" />
           <div className="change-icon" onClick={showImgDetail}>
             <i className="fa-solid fa-pen"></i>
           </div>

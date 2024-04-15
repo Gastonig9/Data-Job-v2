@@ -7,9 +7,6 @@ export const Dropdown: React.FC<DropdownProps> = ({
   userImage,
   userRole,
 }) => {
-  const noAdmin = () => {
-    alert("Only administrators or companies can post jobs");
-  };
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -26,14 +23,10 @@ export const Dropdown: React.FC<DropdownProps> = ({
         <Link to={`profile`}>
           <p>Profile</p>
         </Link>
-        {userRole !== "user" ? (
+        {userRole === "company" && (
           <Link to={`/post-job`}>
             <p className="post-p">Post Job</p>
           </Link>
-        ) : (
-          <p onClick={noAdmin} className="disabled-p">
-            Post Job
-          </p>
         )}
         <p onClick={logout}>Logout</p>
       </div>

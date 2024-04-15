@@ -41,7 +41,7 @@ export const JobsView: React.FC<JobsViewProps> = ({ jobs }) => {
                 <Link to={`/view-job/${job.jobTitle}`}>
                   <button>Apply now</button>
                 </Link>
-                {job.linkedin && <button>Linkedin</button>}
+                {job.linkedin && <Link to={job.linkedin}><button>Linkedin</button></Link>}
               </div>
             </div>
           );
