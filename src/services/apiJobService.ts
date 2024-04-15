@@ -16,7 +16,7 @@ export const apiJobService = createApi({
         getJobByTitle: builder.query<Job | undefined, string>({
             query: (title: string) => `/jobs/${title}`,
         }),
-        postJob: builder.mutation<Job, { newJob: Partial<Job>; userId: string }>({
+        postJob: builder.mutation<Job, { newJob: Partial<Job>; userId: string | undefined }>({
             query: ({ newJob, userId }) => ({
                 url: `/jobs/post-job/${userId}`,
                 method: 'POST',

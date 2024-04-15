@@ -14,5 +14,5 @@ export interface Job {
     jobImage: string
     posted: string | Date
     country: string
-    author: string
+    author?: string
 }

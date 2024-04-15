@@ -10,6 +10,7 @@ interface ViewCandidateProps {
   uid: string | undefined;
   candidate: User;
   onClose: () => void;
+  onDelete: () => void;
   updateApplicantsList: React.Dispatch<React.SetStateAction<User[]>>;
 }
 
@@ -40,7 +41,7 @@ export const ViewCandidate: React.FC<ViewCandidateProps> = ({
       <div className="view-ap-contain">
         <div className="view-c-image">
           <img
-            src={candidate.imageProfile || userDefault}
+            src={candidate.userImage || userDefault}
             alt="Image view profile"
           />
         </div>

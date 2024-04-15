@@ -44,7 +44,7 @@ export interface ChangeUserRole {
 
 
 export interface ChangeUserImage {
-    imageProfile: string;
+    userImage: string;
 }
 
 export interface AddUserSkill {
