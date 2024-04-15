@@ -19,7 +19,6 @@ const JobDetail = () => {
   const { title } = useParams();
   const { data: job } = useGetJobByTitleQuery(title ? title : "");
   const [featuredJobs, setFeaturedJobs] = useState<Job[] | undefined>([]);
-  console.log(job)
 
   useEffect(() => {
     const fetchData = async () => {

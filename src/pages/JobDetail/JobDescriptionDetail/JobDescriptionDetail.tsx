@@ -14,7 +14,7 @@ interface JobDescriptionProps {
   postedDetail: string;
   companyDetail: string;
   linkedinDetail: string | null;
-  author: string | null;
+  author: string | undefined;
 }
 
 export const JobDescriptionDetail: React.FC<JobDescriptionProps> = ({
