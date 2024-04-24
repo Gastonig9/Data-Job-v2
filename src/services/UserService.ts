@@ -4,7 +4,7 @@ import { BASE_URL } from "../assets/url";
 import { UserResponse } from "../models/response.model";
 
 export class UserService {
-    private readonly baseUrl = BASE_URL.dev;
+    private readonly baseUrl = BASE_URL.prod;
 
     async getUserProfile(userId: string | undefined) {
         const response = await fetch(`${this.baseUrl}/user/get-user/${userId}`);

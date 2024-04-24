@@ -3,7 +3,7 @@ import { AuthLogin, AuthRegister } from "../models/auth.model";
 import { BASE_URL } from "../assets/url";
 
 export class AuthService {
-    private readonly baseUrl = BASE_URL.dev
+    private readonly baseUrl = BASE_URL.prod
 
     async registerUser(dataRegister: AuthRegister) {
         const response = await fetch(`${this.baseUrl}/auth/register`, {

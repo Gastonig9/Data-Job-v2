@@ -4,7 +4,7 @@ import { CreateComment } from "../models/post.model";
 import { PostCommentsResponse, PostIndividualResponse, PostResponse } from "../models/response.model";
 
 export class PostService {
-    private readonly baseUrl = BASE_URL.dev;
+    private readonly baseUrl = BASE_URL.prod;
 
 
     async getAllPost(): Promise<PostResponse> {
