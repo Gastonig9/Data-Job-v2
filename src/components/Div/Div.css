@@ -21,3 +21,16 @@
     margin-top: 5px;
     background-color: #ff626d;
 }
+
+/* For small screens */
+@media screen and (max-width: 710px) {
+    .div-contain h2 {
+      font-size: 32px; /* Decrease the font size for smaller screens */
+    }
+  
+    .div-contain .one,
+    .div-contain .two {
+      width: 150px; /* Adjust the width for smaller screens */
+    }
+  }
+  

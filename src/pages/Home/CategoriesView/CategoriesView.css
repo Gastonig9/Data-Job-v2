@@ -42,3 +42,27 @@
     color: #ff626d;
     transition: all 0.3s ease;
 }
+
+/* For small screens */
+@media screen and (max-width: 710px) {
+    .category-contain {
+      width: 100%; /* Make it full width */
+      gap: 20px; /* Decrease the gap between cards */
+      margin-top: 20px; /* Decrease top margin */
+      margin-bottom: 50px; /* Decrease bottom margin */
+    }
+  
+    .category-contain .card {
+      width: 45%; /* Adjust card width */
+      padding: 40px 20px; /* Adjust padding */
+    }
+  
+    .category-contain .card i {
+      font-size: 40px; /* Decrease icon size */
+    }
+  
+    .category-contain .card h3 {
+      font-size: 25px; /* Decrease heading size */
+    }
+  }
+  

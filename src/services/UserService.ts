@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { AddUserSkill, ChangePassword, ChangeUserData, ChangeUserImage, ChangeUserRole } from "../models/user.model";
 import { BASE_URL } from "../assets/url";
+import { UserResponse } from "../models/response.model";
 
 export class UserService {
-    private readonly baseUrl = BASE_URL.prod;
+    private readonly baseUrl = BASE_URL.dev;
 
     async getUserProfile(userId: string | undefined) {
         const response = await fetch(`${this.baseUrl}/user/get-user/${userId}`);
@@ -93,6 +94,19 @@ export class UserService {
         }
     }
 
+    async markRequestAsView(userId: string | undefined, applicantId: string | undefined): Promise<UserResponse> {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/mark-request-view/${userId}/${applicantId}`, {
+                method: "PUT",
+            });
+            const data = await response.json()
+            return data;
+        } catch (error:any) {
+            return error;
+        }
+
+    }
+
     async updateUserRole(userId: string | undefined, newRole: ChangeUserRole) {
         const response = await fetch(`${this.baseUrl}/user/change-role/${userId}`, {
             method: "PUT",
@@ -173,7 +187,7 @@ export class UserService {
         }
     }
 
-    async sendEmailRecoverPass(email:string | undefined) {
+    async sendEmailRecoverPass(email: string | undefined) {
         try {
             const response = await fetch(`${this.baseUrl}/user/send-email-recover/${email}`, {
                 method: 'POST'
@@ -183,7 +197,7 @@ export class UserService {
         } catch (error) {
             return error;
         }
-    } 
+    }
 
     async changeUserPassword(token: string | undefined, newPassword: ChangePassword) {
         try {

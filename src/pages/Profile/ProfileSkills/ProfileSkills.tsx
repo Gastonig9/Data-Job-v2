@@ -38,10 +38,10 @@ const ProfileSkills: React.FC<ChangeSkillsProps> = ({ uid }) => {
       await new UserService().deleteUserSkill(uid);
       toast.success("Skills empty");
       setSkills([]);
-    } catch (error:any) {
+    } catch (error: any) {
       toast.error(error);
     }
-  }
+  };
 
   return (
     <div className="profile-skills-container">
@@ -62,8 +62,10 @@ const ProfileSkills: React.FC<ChangeSkillsProps> = ({ uid }) => {
               <li key={index}>{skill}</li>
             ))}
           </ul>
-          <button onClick={handleAddSkillSubmit}>Send</button>
-          <button onClick={handleDeleteSkillSubmit}>Empty</button>
+          <div className="buttons-skills">
+            <button onClick={handleAddSkillSubmit}>Send</button>
+            <button onClick={handleDeleteSkillSubmit}>Empty</button>
+          </div>
         </div>
       )}
     </div>

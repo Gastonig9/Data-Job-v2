@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./SearchBar.css";
 import { countries, categories, seniority } from "../../assets/constants";
 import { CSeachBarProps } from "../../models/search.model";

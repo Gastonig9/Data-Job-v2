@@ -12,12 +12,11 @@
     background-color: #ffffff;
     padding: 20px;
     text-align: center;
-    
   }
   
   .section1 {
-    grid-column: span 2; /* Ocupa 2 columnas */
-    grid-row: span 2; /* Ocupa 2 filas */
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
   .section2 {
@@ -30,12 +29,19 @@
   }
   
   .section4 {
-    grid-row: span 2; /* Ocupa 2 filas */
+    grid-row: span 2;
     height: 200px;
   }
   
   .section6 {
-    grid-column: span 2; /* Ocupa 2 columnas */
-    grid-row: span 2; /* Ocupa 2 filas */
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  @media screen and (max-width: 710px) {
+    .profile-grid {
+      display: flex;
+      flex-direction: column;
+    }
   }
   

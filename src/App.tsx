@@ -14,6 +14,8 @@ import { User } from "./models/user.model";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer/Footer";
 import RestorePass from "./pages/RestorePass/RestorePass";
+import PostDetail from "./pages/PostDetail/PostDetail";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   const [open, setopen] = useState(false);
@@ -28,25 +30,12 @@ function App() {
         {open && <Auth setCloseModal={setopen} />}
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/blog" element={<Blog token={token}/>}></Route>
           <Route path="/view-job/:title" element={<JobDetail />}></Route>
           <Route path="/filter" element={<FilterJob />}></Route>
-          {decodedToken && !isExpired ? (
-            <Route
-              path="/restore-pass/:token"
-              element={<RestorePass />}
-            ></Route>
-          ) : (
-            <Route
-              path="/profile"
-              element={
-                <NotFound
-                  title="Unauthorized"
-                  message="You do not have permissions to view this page"
-                  statusCode={401}
-                />
-              }
-            ></Route>
-          )}
+          <Route path="/restore-pass/:token" element={<RestorePass />}></Route>
+          <Route path="/view-post/:postId" element={<PostDetail/>}></Route>
+        
 
           {decodedToken && decodedToken.role === "company" && !isExpired ? (
             <Route path="/post-job" element={<PostJob />}></Route>

@@ -20,6 +20,7 @@ export const ViewCandidate: React.FC<ViewCandidateProps> = ({
   onClose,
   updateApplicantsList,
 }) => {
+
   const handleDeleteJobRequest = async (aId: string | undefined) => {
     try {
       const deleteApplicant = await new UserService().deleteUserJobRequest(
@@ -36,6 +37,16 @@ export const ViewCandidate: React.FC<ViewCandidateProps> = ({
       toast.error(error);
     }
   };
+
+  const handleMarkRequestAsView = async (aId: string | undefined) => {
+    try {
+      const requestView = await new UserService().markRequestAsView(uid, aId)
+      toast.success(requestView.message)
+      
+    } catch (error:any) {
+      toast.error(error);
+    }
+  }
   return (
     <div className="view-absolute-contain">
       <div className="view-ap-contain">
@@ -66,8 +77,8 @@ export const ViewCandidate: React.FC<ViewCandidateProps> = ({
         </div>
       </div>
       <div className="vie-ap-buttons">
-        <button style={{ backgroundColor: "green" }} className="see">
-          Mark as seen
+        <button onClick={()=> {handleMarkRequestAsView(candidate._id)}} style={{ backgroundColor: "green" }} className="see">
+          Mark as view
         </button>
         <button
           onClick={() => {

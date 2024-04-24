@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import "./ChangeData.css";
 import { inputTextProfile } from "../../../assets/constants";
 import { ChangeUserData } from "../../../models/user.model";
 import { UserService } from "../../../services/UserService";
+import { Loader } from "../../../components/Loader/Loader";
+import { toast } from "react-toastify";
 
 interface ChangeDataProps {
   uid: string | undefined;
@@ -34,23 +37,32 @@ export const ChangeData: React.FC<ChangeDataProps> = ({ uid }) => {
     }));
   };
 
+  const [loadingChange, setloadingChange] = useState(false);
+
   const handleChangeDataSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     field: keyof ChangeUserData
   ) => {
     event.preventDefault();
     try {
-      const updateData = await new UserService().updateUserInfo(
-        uid,
-        updateUserInfo
-      );
-      console.log(updateData);
-      setUpdateSuccess((prevUpdateSuccess) => ({
-        ...prevUpdateSuccess,
-        [field]: true,
-      }));
-    } catch (error) {
-      console.error("Error updating user info:", error);
+      await new UserService().updateUserInfo(uid, updateUserInfo);
+      let count = 0;
+      const dataInterval = setInterval(() => {
+        count++;
+        if (count === 1) setloadingChange(true);
+        if (count === 3) {
+          setloadingChange(false);
+          setUpdateSuccess((prevUpdateSuccess) => ({
+            ...prevUpdateSuccess,
+            [field]: true,
+          }));
+        }
+        if (count === 5) {
+          clearInterval(dataInterval);
+        }
+      }, 500);
+    } catch (error: any) {
+      toast.error(error);
     }
   };
 
@@ -75,7 +87,9 @@ export const ChangeData: React.FC<ChangeDataProps> = ({ uid }) => {
                 autoComplete="off"
               />
 
-              {updateSuccess[input.name as keyof ChangeUserData] ? (
+              {loadingChange ? (
+                <Loader isForPage={false} isForButton={true} />
+              ) : updateSuccess[input.name as keyof ChangeUserData] ? (
                 <div className="icon-success">
                   <i className="fa-solid fa-square-check"></i>
                 </div>
