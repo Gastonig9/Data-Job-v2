@@ -83,7 +83,7 @@ export const ProfileRole: React.FC<ProfileRoleProps> = ({ uid, role }) => {
               {applicants.map((ap, index) => (
                 <div key={index} className="applicant">
                   <div className="img-name">
-                    <img src={ap.user.imageProfile || userDefault} alt="" />
+                    <img src={ap.user.userImage || userDefault} alt="" />
                     <h1>{ap.user.fullname}</h1>
                     <p>Applying for: {ap.jobTo}</p>
                   </div>

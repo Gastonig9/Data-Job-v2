@@ -1,0 +1,128 @@
+.latest-jobs-contain {
+  background-color: #f8f6f6;
+}
+
+.latest-jobs-contain .jobs-vw-contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.latest-jobs-contain .card-job {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 50px;
+}
+
+.latest-jobs-contain .card-job img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.latest-jobs-contain .card-job .info-job-contain {
+  width: 50%;
+}
+
+.latest-jobs-contain .card-job .info-job-contain h1 {
+  color: #4e5c67;
+}
+
+.latest-jobs-contain .card-job .info-job-contain h3 {
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  width: 15%;
+  background-color: #ffedee;
+  color: #ff626d;
+}
+
+.latest-jobs-contain .card-job .info-job-contain .more-info {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.latest-jobs-contain .card-job .info-job-contain .more-info h6 {
+  color: #4e5c67;
+}
+
+.latest-jobs-contain .card-job .apply-job {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.latest-jobs-contain .card-job .apply-job button {
+  width: 90%;
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: #ff626d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.latest-jobs-contain .card-job .apply-job button:hover {
+  background-color: #4e5c67;
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* For small screens */
+@media screen and (max-width: 710px) {
+  .latest-jobs-contain .card-job {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .latest-jobs-contain .card-job img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .latest-jobs-contain .card-job .info-job-contain {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .latest-jobs-contain .card-job .info-job-contain h3 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .latest-jobs-contain .card-job .info-job-contain .more-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .latest-jobs-contain .card-job .info-job-contain .more-info h6 {
+    width: 100%;
+  }
+
+  .latest-jobs-contain .card-job .apply-job {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .latest-jobs-contain .card-job .apply-job button {
+    width: 100%;
+  }
+}

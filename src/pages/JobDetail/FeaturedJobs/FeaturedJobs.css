@@ -52,3 +52,17 @@ h4 {
   color: #663ace;
   font-size: 17px;
 }
+
+@media screen and (max-width: 710px) {
+  .featured-jobs {
+    width: 80%;
+  }
+
+  .featured-jobs .f-job-card {
+    width: 100%;
+  }
+
+  .featured-jobs .f-job-card:hover {
+    transform: none;
+  }
+}

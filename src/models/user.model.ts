@@ -12,6 +12,13 @@ export interface User {
     role?: 'user' | 'admin' | 'company';
     skills?: string[];
     user?: any
+    applicants?: [
+        {
+            applicant: string;
+            jobTo: string;
+            displayed: boolean;
+        }
+    ]
     jobTo?: string;
 }
 

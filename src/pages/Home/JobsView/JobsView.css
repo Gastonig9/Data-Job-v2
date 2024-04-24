@@ -19,87 +19,140 @@
   border-radius: 10px;
   background-color: white;
   margin-bottom: 50px;
-
 }
 
 .card-job img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
-.card-job .info-job-contain  {
-    width: 50%;
+.card-job .info-job-contain {
+  width: 50%;
 }
 
 .card-job .info-job-contain h1 {
-    color: #4e5c67;
+  color: #4e5c67;
 }
 
 .card-job .info-job-contain h3 {
-    text-align: center;
-    padding: 10px;
-    border-radius: 15px;
-    width: 15%;
-    background-color: #ffedee;
-    color: #ff626d;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  width: 15%;
+  background-color: #ffedee;
+  color: #ff626d;
 }
 
 .card-job .info-job-contain .more-info {
-    width: 45%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-    font-size: 25px;
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 25px;
 }
 
 .card-job .info-job-contain .more-info h6 {
-    color: #4e5c67;
+  color: #4e5c67;
 }
 
 .card-job .apply-job {
-    width: 15%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card-job .apply-job button {
-    width: 90%;
-    padding: 10px 20px;
-    font-size: 25px;
-    background-color: #ff626d;
-    color: white;
-    border: none;
-    border-radius: 10px;
+  width: 90%;
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: #ff626d;
+  color: white;
+  border: none;
+  border-radius: 10px;
 }
 
 .card-job .apply-job button:hover {
-    background-color: #4e5c67;
-    cursor: pointer;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+  background-color: #4e5c67;
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
 .show-more-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 200px;
 }
 
-.show-more-container button{
-    width: 20%;
-    border: none;
-    background-color: #ff626d;
-    cursor: pointer;
-    color: white;
-    border-radius: 10px;
-    height: 50px;
+.show-more-container button {
+  width: 20%;
+  border: none;
+  background-color: #ff626d;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
 }
 
 .show-more-container button:hover {
-    background-color: #4e5c67;
-    transition: all 0.3s ease;
+  background-color: #4e5c67;
+  transition: all 0.3s ease;
+}
+
+/* For small screens */
+@media screen and (max-width: 710px) {
+  .card-job {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card-job img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .card-job .info-job-contain {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .card-job .info-job-contain h3 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .card-job .info-job-contain .more-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-job .info-job-contain .more-info h6 {
+    width: 100%;
+  }
+
+  .card-job .apply-job {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .card-job .apply-job button {
+    width: 100%;
+  }
+
+  .show-more-container {
+    height: auto;
+  }
+
+  .show-more-container button {
+    width: 100%;
+  }
 }

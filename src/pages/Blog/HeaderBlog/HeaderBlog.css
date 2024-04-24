@@ -1,0 +1,31 @@
+.header-blog-contain {
+  background-image: url("https://i.ibb.co/q7J24CS/work.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+.header-blog-contain .detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(30, 28, 28, 0.9);
+  height: 250px;
+}
+
+.header-blog-contain .detail h2 {
+  color: #fcf6f6;
+  font-size: 42px;
+}
+.header-blog-contain .detail .one-detail {
+  width: 250px;
+  height: 3px;
+  background-color: #fcf6f6;
+}
+
+.header-blog-contain .detail .two-detail {
+  width: 120px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: #fcf6f6;
+}

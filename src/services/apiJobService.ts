@@ -3,7 +3,7 @@ import { Job } from '../models';
 import { BASE_URL } from '../assets/url';
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: BASE_URL.prod,
+    baseUrl: BASE_URL.dev,
 });
 
 export const apiJobService = createApi({

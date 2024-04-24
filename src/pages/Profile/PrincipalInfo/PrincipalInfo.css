@@ -88,3 +88,35 @@
     transform: translateY(-5px);
     transition: all 0.3s ease;
 }
+
+
+@media screen and (max-width: 710px) {
+    .p-info-contain {
+        flex-direction: column;
+    }
+
+    .p-info-contain .profile-img {
+        width: 55%;
+        left: 23%;
+    }
+    
+
+    .p-info-contain .profile-info {
+        text-align: center;
+    }
+
+    .p-info-contain .profile-info .data {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .p-info-contain .profile-img {
+        left: 19%;
+    }
+}

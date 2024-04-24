@@ -39,8 +39,19 @@
     cursor: pointer;
 }
 
+.profile-role-contain .applicant .img-name {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .profile-role-contain .applicant .img-name h1 {
     font-size: 22px;
+}
+
+.profile-role-contain .applicant .img-name p {
+    color: #f24d49;
+    font-weight: 600;
 }
 
 .profile-role-contain .applicant img {

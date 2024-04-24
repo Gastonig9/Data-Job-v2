@@ -2,7 +2,7 @@ import { Job } from "../models/job.model";
 import { BASE_URL } from "../assets/url";
 
 export class JobService {
-    private readonly baseUrl = BASE_URL.prod;
+    private readonly baseUrl = BASE_URL.dev;
 
     async loadJobs(): Promise<Job[]> {
         try {
@@ -25,6 +25,16 @@ export class JobService {
         } catch (error) {
             console.error('Error fetching jobs:', error);
             throw error;
+        }
+    }
+
+    async getLatestJobs() {
+        try {
+            const response = await fetch(`${this.baseUrl}/jobs/get-latest-jobs`);
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
         }
     }
 

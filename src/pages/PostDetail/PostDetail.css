@@ -1,0 +1,43 @@
+.post-detail-info-contain {
+    padding: 40px 90px;
+}
+
+.post-detail-info-contain .post-detail-image {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 600px;
+}
+
+.post-detail-info-contain .post-detail-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-detail-info-contain h1 {
+    width: 100%;
+    color: #2a3843;
+    font-size: 45px;
+}
+
+.post-detail-info-contain .post-detail-info {
+    display: flex;
+    gap: 40px;
+}
+
+.post-detail-info-contain .post-detail-info div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-detail-info-contain .post-detail-info .post-detail-info div h6, i {
+    font-size: 27px;
+    color: #2a3843;
+}
+
+.post-detail-info-contain {
+    color: #2a3843;
+    font-size: 20px;
+    font-weight: 400;
+}

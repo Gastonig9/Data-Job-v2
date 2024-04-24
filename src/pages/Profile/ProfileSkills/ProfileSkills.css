@@ -44,3 +44,19 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+.profile-skills-container .skills-container .buttons-skills {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile-skills-container .skills-container .buttons-skills button {
+  width: 40%;
+  height: 50px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  background-color: #f24d49;
+  cursor: pointer;
+}

@@ -5,6 +5,15 @@
   align-items: center;
 }
 
+.nav-fixed {
+  position: fixed;
+  z-index: 9999;
+}
+
+.navbar-responsive-contain {
+  display: none;
+}
+
 .nav-brand {
   width: 15%;
   padding: 0px 20px;
@@ -25,25 +34,25 @@
 }
 
 .navbar-contain ul a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar-contain ul li {
-    list-style: none;
-    font-size: 20px;
-    color: white;
+  list-style: none;
+  font-size: 20px;
+  color: white;
 }
 
 .navbar-contain ul li:hover {
-    color: #f24d49;
+  color: #f24d49;
 }
 
 .nav-login {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
 }
 
 .nav-login a {
@@ -51,24 +60,162 @@
 }
 
 .nav-login h6 {
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 .nav-login h6:hover {
-    color: #f24d49;
-    cursor: pointer;
+  color: #f24d49;
+  cursor: pointer;
 }
 
 .nav-login h2 {
-    background-color: #f24d49;
-    color: white;
-    padding: 10px 40px;
-    border-radius: 10px;
+  background-color: #f24d49;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 10px;
 }
 
 .nav-login h2:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+
+.nav-login .post-job-button {
+  background-color: #f24d49;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav-login .login-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-login .login-title i {
+  font-size: 25px;
+  color: #2a3843;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 60px;
+}
+
+.nav-login .post-job-button:hover{
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.nav-login .post-job-button button {
+  cursor: pointer;
+  background-color: #f24d49;
+  border: none;  
+  font-size: 22px;
+  border-radius: 10px;
+  color: white;
+}
+
+.nav-login .post-job-button i {
+  color: white;
+  font-size: 22px;
+  padding-right: 10px;
+  border-right: 2px solid white;
+}
+
+@media screen and (max-width: 710px) {
+  .navbar-contain {
+    display: none;
+  }
+
+  .navbar-responsive-contain {
+    display: block;
+    background-color: #2a3843;
+  }
+
+  .navbar-responsive-contain .open-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
+  .navbar-responsive-contain .open-nav .img-nav-responsive {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .navbar-responsive-contain .open-nav .img-nav-responsive img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .navbar-responsive-contain .open-nav .bars {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .navbar-responsive-contain .open-nav .bars i {
+    font-size: 40px;
+    color: #f24d49;
+    padding: 10px;
+  }
+
+  .navbar-responsive-contain .open-nav .bars i:hover {
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transform: translateY(-10px);
-    transition: all 0.5s ease;
+  }
+
+  /* NAVBAR RESPONSIVE INFO */
+  .navbar-responsive-contain .navbar-responsive-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #2a3843;
+    height: 300px;
+    font-size: 25px;
+  }
+
+  .navbar-responsive-contain .navbar-responsive-info a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .navbar-responsive-contain .navbar-responsive-info a li {
+    width: 90%;
+    list-style: none;
+    padding: 20px 10px;
+  }
+
+  .navbar-responsive-contain .navbar-responsive-info a li:hover {
+    background-color: white;
+    color: #2a3843;
+  }
+
+  .navbar-responsive-contain .navbar-responsive-info .login-responsive li {
+    width: 90%;
+    list-style: none;
+    padding: 20px 10px;
+    background-color: #f24d49;
+    color: white;
+    cursor: pointer;
+  }
+
+  .profile-link {
+    display: flex;
+  }
+
+  .profile-link img {
+    width: 50px;
+    height: 50px;
+  }
 }

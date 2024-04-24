@@ -1,16 +1,19 @@
 import { DropdownProps } from "../../models/dropdown.model";
 import "./Dropdown.css";
 import userIcon from "../../assets/user-icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const Dropdown: React.FC<DropdownProps> = ({
   fullname,
   userImage,
   userRole,
 }) => {
+  const navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("token");
-    window.location.reload();
+    navigate("/", {
+      preventScrollReset: true,
+    });
   };
   return (
     <div className="dropdown">
@@ -21,14 +24,23 @@ export const Dropdown: React.FC<DropdownProps> = ({
 
       <div className="dropdown-content">
         <Link to={`profile`}>
-          <p>Profile</p>
+          <div>
+          <i className="fa-solid fa-user"></i><p>Profile</p>
+          </div>
         </Link>
         {userRole === "company" && (
           <Link to={`/post-job`}>
-            <p className="post-p">Post Job</p>
+            <div>
+            <i className="fa-solid fa-suitcase"></i><p className="post-p">Post Job</p>
+            </div>
           </Link>
         )}
-        <p onClick={logout}>Logout</p>
+        <div className="logout-contain" onClick={logout}>
+          <div>
+          <i className="fa-solid fa-right-from-bracket"></i><p className="logout-p" >Logout</p>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

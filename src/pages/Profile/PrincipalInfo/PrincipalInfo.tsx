@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./PrincipalInfo.css";
 import imgProfile from "../../../assets/user-icon.png";
 import React, { useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import { ChangeUserImage, User } from "../../../models/user.model";
 import { Loader } from "../../../components/Loader/Loader";
 import { UploadImage } from "../../../components/UploadImage/UploadImage";
 import { Skills } from "./Skills/Skills";
+import { toast } from "react-toastify";
 
 interface ChangeDataProps {
   uid: string | undefined;
@@ -32,6 +34,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
     const getUser = async () => {
       try {
         const user = await new UserService().getUserProfile(uid);
+        console.log(user)
         setuserProfile(user.userProfile);
       } catch (error) {
         alert(error)
@@ -54,9 +57,8 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
     try {
       await new UserService().updateUserImage(uid, newImage);
       setshowImage(false);
-      window.location.reload()
-    } catch (error) {
-      console.error("Error updating user image:", error);
+    } catch (error:any) {
+      toast.error(error)
     }
   };
 

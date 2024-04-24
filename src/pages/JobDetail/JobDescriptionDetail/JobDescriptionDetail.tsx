@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import "./JobDescriptionDetail.css";
 import { UserService } from "../../../services/UserService";
 import { toast } from "react-toastify";
@@ -27,7 +27,14 @@ export const JobDescriptionDetail: React.FC<JobDescriptionProps> = ({
   linkedinDetail,
   author,
 }) => {
-  const [jobeSaved, setjobeSaved] = useState(false);
+  const [jobeSaved, setjobeSaved] = useState<boolean>(false);
+
+  useEffect(() => {
+    const savedJob = localStorage.getItem(`savedJob_${jobId}_${uid}`);
+    if (savedJob) {
+      setjobeSaved(true);
+    }
+  }, [jobId, uid]);
 
   const handleSaveJob = async (
     e: MouseEvent<HTMLElement>,
@@ -47,6 +54,8 @@ export const JobDescriptionDetail: React.FC<JobDescriptionProps> = ({
         toast.success("Job saved");
         setjobeSaved(true);
       }
+      // Guardar el estado en el localStorage para el usuario actual
+      localStorage.setItem(`savedJob_${jobId}_${uid}`, "true");
     } catch (error: any) {
       toast.error(error);
     }
@@ -60,16 +69,52 @@ export const JobDescriptionDetail: React.FC<JobDescriptionProps> = ({
     try {
       const apply = await new UserService().sendApplyUser(uid, jobId);
       if (apply.status === 401) {
-        toast.error(apply.message);
+        toast.error(apply.message, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
       if (apply.status === 400) {
-        toast.error(apply.message);
+        toast.error(apply.message, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
       if (apply.status === 200) {
-        toast.success(apply.message);
+        toast.success(apply.message, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } catch (error: any) {
-      toast.warning(error);
+      toast.warning(error, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -78,14 +123,16 @@ export const JobDescriptionDetail: React.FC<JobDescriptionProps> = ({
       <img src="https://i.ibb.co/FzfGSWy/job-icon.jpg" alt="Job Image" />
       <div className="title-detail">
         <h3>{titleDetail}</h3>
-        <i
-          className={`${
-            jobeSaved ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark"
-          }`}
-          onClick={(e) => {
-            handleSaveJob(e, jobId);
-          }}
-        ></i>
+        {uid && (
+          <i
+            className={`${
+              jobeSaved ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark"
+            }`}
+            onClick={(e) => {
+              handleSaveJob(e, jobId);
+            }}
+          ></i>
+        )}
       </div>
       <hr />
       <div className="posted-datail">

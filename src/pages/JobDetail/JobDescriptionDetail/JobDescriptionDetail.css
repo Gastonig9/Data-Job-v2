@@ -1,82 +1,128 @@
 .description-contain {
-    padding: 20px 50px;
+  padding: 20px 50px;
 }
 
 .description-contain img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .description-contain .title-detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .description-contain .title-detail h3 {
-    font-size: 29px;
-    color: #4e5c67;
+  font-size: 29px;
+  color: #4e5c67;
 }
 
 .description-contain .title-detail i {
-    font-size: 35px;
-    color: #ff626d;
-    cursor: pointer;
+  font-size: 35px;
+  color: #ff626d;
+  cursor: pointer;
 }
 
 .description-contain .posted-datail {
-    width: 70%;
-    display: flex;
-    gap: 20px;
+  width: 70%;
+  display: flex;
+  gap: 20px;
 }
 
 .description-contain .description {
-    width: 85%;
-    background-color: rgb(245, 245, 245);
-    padding: 10px 30px;
-    box-shadow: 2px 5px 12px 2px rgb(227, 226, 226) ;
-    border-radius: 20px;
+  width: 85%;
+  background-color: rgb(245, 245, 245);
+  padding: 10px 30px;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  border-radius: 20px;
 }
 
 .description-contain .description p {
-    font-size: 20px;
-    color: #3c464f
+  font-size: 20px;
+  color: #3c464f;
 }
 
 .buttons-apply {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
 .buttons-apply a {
-    width: 30%;
+  width: 30%;
 }
 
 .buttons-apply .toLinkedin {
-    width: 100%;
-    background-color: rgb(6, 85, 117);
-    color: white;
-    padding: 15px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  width: 100%;
+  background-color: rgb(6, 85, 117);
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .buttons-apply .toCompany {
-    width: 30%;
-    background-color: #ff626d;
-    color: white;
-    padding: 15px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  width: 30%;
+  background-color: #ff626d;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .buttons-apply .toCompany:hover {
-    background-color: #3c464f;
-    transition: all ease 0.3s;
+  background-color: #3c464f;
+  transition: all ease 0.3s;
+}
+
+@media screen and (max-width: 710px) {
+  .description-contain {
+    border: 2px solid red;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-contain img {
+    width: 50%;
+    margin: auto;
+    height: auto; 
+  }
+
+  .description-contain .title-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-contain .title-detail h3 {
+    font-size: 24px;
+  }
+
+  .description-contain .title-detail i {
+    font-size: 28px;
+  }
+
+  .description-contain .posted-datail {
+    width: 100%; 
+  }
+
+  .description-contain .description {
+    width: 80%;
+  }
+
+  .buttons-apply {
+    flex-direction: column;
+  }
+
+  .buttons-apply a,
+  .buttons-apply .toCompany {
+    width: 100%;
+  }
 }
