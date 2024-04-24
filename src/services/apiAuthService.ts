@@ -6,7 +6,7 @@ import { BASE_URL } from '../assets/url';
 
 export const apiAuthService = createApi({
     reducerPath: 'apiAuth',
-    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL.dev }),
+    baseQuery: fetchBaseQuery({ baseUrl: BASE_URL.prod }),
     endpoints: (builder) => ({
         registerUser: builder.mutation<AuthRegister, Partial<AuthRegister>>({
             query: (newJob) => ({

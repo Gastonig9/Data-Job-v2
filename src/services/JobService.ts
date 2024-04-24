@@ -2,7 +2,7 @@ import { Job } from "../models/job.model";
 import { BASE_URL } from "../assets/url";
 
 export class JobService {
-    private readonly baseUrl = BASE_URL.dev;
+    private readonly baseUrl = BASE_URL.prod;
 
     async loadJobs(): Promise<Job[]> {
         try {
