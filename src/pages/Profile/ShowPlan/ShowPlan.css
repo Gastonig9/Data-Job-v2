@@ -1,0 +1,80 @@
+.show-plan-contain {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-plan-contain.blue {
+    background-image: url("https://i.ibb.co/WtvV1Lv/golden-black-premium-background-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.show-plan-contain.blue h1 {
+    font-size: 37px;
+    background-color: rgba(255, 98, 109, 0.8);
+    padding: 10px;
+    box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+    color: white;
+    border-radius: 10px;
+}
+
+.show-plan-contain.orange {
+    background-color: #ff626d;
+    color: white;
+}
+
+.show-plan-contain.orange h1 {
+    font-size: 37px;
+    background-color: black;
+    padding: 10px;
+    box-shadow: 2px 5px 12px 2px rgb(24, 24, 24);
+    color: #ff626d;
+    border-radius: 10px;
+}
+
+.show-plan-contain .offer-suscribe {
+    width: 100%;
+}
+
+.show-plan-contain .offer-suscribe h1 {
+    color: #4e5c67;
+}
+
+.show-plan-contain .links-plan {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.show-plan-contain .links-plan .a-one {
+    width: 50%;
+    font-size: 25px;
+    color: #ff626d;
+    text-decoration: none;
+    border: 2px solid #ff626d;
+    padding: 20px;
+}
+
+.show-plan-contain .links-plan .a-two {
+    width: 50%;
+    font-size: 25px;
+    color: #4e5c67;
+    text-decoration: none;
+    border: 2px solid #4e5c67;
+    padding: 20px;
+}
+
+.show-plan-contain .links-plan .a-one:hover {
+    background-color: #ff626d;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.show-plan-contain .links-plan .a-two:hover {
+    background-color: #4e5c67;
+    color: white;
+    transition: all 0.3s ease;
+}

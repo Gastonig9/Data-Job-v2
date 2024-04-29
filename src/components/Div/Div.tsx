@@ -1,7 +1,7 @@
 import "./Div.css"
 
 interface DivProps {
-    title: string
+    title: string | undefined
 }
 
 export const Div = ({ title }: DivProps) => {

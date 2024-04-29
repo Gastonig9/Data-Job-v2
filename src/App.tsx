@@ -16,6 +16,9 @@ import Footer from "./components/Footer/Footer";
 import RestorePass from "./pages/RestorePass/RestorePass";
 import PostDetail from "./pages/PostDetail/PostDetail";
 import Blog from "./pages/Blog/Blog";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import Payment from "./pages/Payment/Payment";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [open, setopen] = useState(false);
@@ -28,16 +31,54 @@ function App() {
       <BrowserRouter>
         <Navbar setOpenModal={setopen} />
         {open && <Auth setCloseModal={setopen} />}
+        <ScrollToTop/>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/blog" element={<Blog token={token}/>}></Route>
+          <Route path="/" element={<Home token={token} urole={decodedToken?.role}/>}></Route>
+          <Route path="/blog" element={<Blog token={token} />}></Route>
           <Route path="/view-job/:title" element={<JobDetail />}></Route>
           <Route path="/filter" element={<FilterJob />}></Route>
           <Route path="/restore-pass/:token" element={<RestorePass />}></Route>
-          <Route path="/view-post/:postId" element={<PostDetail/>}></Route>
-        
+          <Route path="/view-post/:postId" element={<PostDetail />}></Route>
 
-          {decodedToken && decodedToken.role === "company" && !isExpired ? (
+          {/* PRIVATE ROUTES */}
+
+          {decodedToken && decodedToken.role === "user" && !isExpired ? (
+            <Route
+              path="/payment/:subscription"
+              element={<Payment uid={decodedToken?.userId} />}
+            ></Route>
+          ) : (
+            <Route
+              path="/payment/:subscription"
+              element={
+                <NotFound
+                  title="Unauthorized"
+                  message="Possible reasons: You already have an active subscription at this time or you are not logged in"
+                  statusCode={401}
+                />
+              }
+            ></Route>
+          )}
+
+          {decodedToken && decodedToken.role === "admin" && !isExpired ? (
+            <Route
+              path="/create-post"
+              element={<CreatePost uid={decodedToken?.userId} />}
+            ></Route>
+          ) : (
+            <Route
+              path="/create-post"
+              element={
+                <NotFound
+                  title="Unauthorized"
+                  message="Only administrator roles can create a post"
+                  statusCode={401}
+                />
+              }
+            ></Route>
+          )}
+
+          {decodedToken && (decodedToken.role === "company" || decodedToken.role === "admin") && !isExpired ? (
             <Route path="/post-job" element={<PostJob />}></Route>
           ) : (
             <Route
@@ -53,7 +94,7 @@ function App() {
           )}
 
           {decodedToken && !isExpired ? (
-            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/profile" element={<Profile token={decodedToken} />}></Route>
           ) : (
             <Route
               path="/profile"
@@ -66,14 +107,9 @@ function App() {
               }
             ></Route>
           )}
-          <Route path="*" element={
-              <NotFound
-                title="Not Found"
-                statusCode={404}
-                message="This page was not found"
-              />
-            }
-          ></Route>
+
+          {/* NOT FOUND */}
+          <Route path="*" element={<NotFound title="Not Found" statusCode={404} message="This page was not found"/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

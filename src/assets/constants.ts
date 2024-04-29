@@ -1,4 +1,5 @@
 import { CardCategoryModel, InputConfig } from "../models";
+import { Subscription } from "../models/subscription.model";
 
 export const countries = [
   "Argentina",
@@ -182,4 +183,19 @@ export const inputTextProfile: InputConfig[] = [
     required: true,
   },
 ];
+
+export const subscriptionCards: Subscription[] = [
+  {
+    plan: "Basic",
+    price: 10,
+    benefits: ["See jobs", "20 Days Duration", "Post jobs"],
+    path: "plan-basic"
+  },
+  {
+    plan: "Premium",
+    price: 20,
+    benefits: ["See jobs", "20 Days Duration", "Post jobs", "Publish articles"],
+    path: "plan-premium"
+  }
+]
 

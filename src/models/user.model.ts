@@ -20,6 +20,7 @@ export interface User {
         }
     ]
     jobTo?: string;
+    balance?: number;
 }
 
 export interface UserApplicantResponse {
@@ -60,4 +61,9 @@ export interface AddUserSkill {
 
 export interface ChangePassword {
     newPassword: string | undefined;
+}
+
+export interface UserPayment {
+    plan: string | undefined;
+    planPrice: number | undefined;
 }

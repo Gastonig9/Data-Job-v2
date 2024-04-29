@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
-import { HeaderPostDetail } from "./HeaderPostDetail/HeaderPostDetail";
+import { HeaderPostDetail, PostComments } from ".";
 import "./PostDetail.css";
 import { toast } from "react-toastify";
 import { PostService } from "../../services/PostService";
@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 import { Post } from "../../models/post.model";
 import { Loader } from "../../components/Loader/Loader";
 import { getDateString } from "../../helpers/helpers";
-import { PostComments } from "./PostComments/PostComments";
 import { useJwt } from "react-jwt";
 import { User } from "../../models/user.model";
 
@@ -65,7 +64,7 @@ const PostDetail = () => {
             <h6>{postIndividual.postCategory}</h6>
           </div>
         </div>
-        <p>{postIndividual.postDescription}</p>
+        {postIndividual.postDescription && <div dangerouslySetInnerHTML={{ __html: postIndividual.postDescription }} />}
       </div>
       <PostComments token={token} uimage={decodedToken?.userImage} uname={decodedToken?.fullname} pid={postId}/>
     </div>

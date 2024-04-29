@@ -25,22 +25,35 @@ export const Dropdown: React.FC<DropdownProps> = ({
       <div className="dropdown-content">
         <Link to={`profile`}>
           <div>
-          <i className="fa-solid fa-user"></i><p>Profile</p>
+            <i className="fa-solid fa-user"></i>
+            <p>Profile</p>
           </div>
         </Link>
-        {userRole === "company" && (
-          <Link to={`/post-job`}>
+        {(userRole === "company" || userRole === "admin") && (
+            <>
+              <Link to={`/post-job`}>
+                <div>
+                  <i className="fa-solid fa-suitcase"></i>
+                  <p className="post-p">Post Job</p>
+                </div>
+              </Link>
+            </>
+        )}
+
+        {userRole === "admin" && (
+          <Link to={`/create-post`}>
             <div>
-            <i className="fa-solid fa-suitcase"></i><p className="post-p">Post Job</p>
+              <i className="fa-regular fa-newspaper"></i>
+              <p className="post-p">Create Post</p>
             </div>
           </Link>
         )}
         <div className="logout-contain" onClick={logout}>
           <div>
-          <i className="fa-solid fa-right-from-bracket"></i><p className="logout-p" >Logout</p>
+            <i className="fa-solid fa-right-from-bracket"></i>
+            <p className="logout-p">Logout</p>
           </div>
         </div>
-        
       </div>
     </div>
   );

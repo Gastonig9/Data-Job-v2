@@ -7,6 +7,12 @@ export interface UserResponse {
     status: number
 }
 
+export interface PaymentResponse {
+    message?: string;
+    response?: string;
+    status: number;
+}
+
 export interface PostResponse {
     message?: string;
     response?: Post[] | Post | undefined

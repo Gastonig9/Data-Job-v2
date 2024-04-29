@@ -1,24 +1,32 @@
-import { HomeHeader, HowItWorks } from '.';
-import { CategoriesView } from './CategoriesView/CategoriesView';
-import { JobsView } from './JobsView/JobsView';
-import { useGetJobsQuery } from '../../services/apiJobService';
-import { Loader } from '../../components/Loader/Loader';
-import { LatestJobs } from './LatestJobs/LatestJobs';
-import PostView from './PostView/PostView';
+import { HomeHeader, HowItWorks } from ".";
+import { CategoriesView } from "./CategoriesView/CategoriesView";
+import { JobsView } from "./JobsView/JobsView";
+import { useGetJobsQuery } from "../../services/apiJobService";
+import { Loader } from "../../components/Loader/Loader";
+import { LatestJobs } from "./LatestJobs/LatestJobs";
+import PostView from "./PostView/PostView";
+import { Subscription } from "./Subscription/Subscription";
+import React from "react";
 
-const Home = () => {
+interface HomePageProps {
+  token: string | null;
+  urole: string | undefined;
+}
+
+const Home: React.FC<HomePageProps> = ({ token, urole }) => {
   const { data: jobs, isLoading } = useGetJobsQuery([]);
 
-  if (isLoading) return <Loader isForButton={false} isForPage={true}/>;
+  if (isLoading) return <Loader isForButton={false} isForPage={true} />;
 
   return (
     <>
       <HomeHeader />
       <CategoriesView />
-      <LatestJobs/>
+      <LatestJobs />
       {jobs && <JobsView jobs={jobs} />}
       <HowItWorks />
-      <PostView/>
+      <PostView />
+      {token && urole === "user" && <Subscription />}
     </>
   );
 };

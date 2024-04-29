@@ -15,7 +15,6 @@ export const Post = () => {
     const getAllPosts = async () => {
       try {
         const allPosts = await new PostService().getAllPost();
-        console.log(allPosts);
         const onlyThree = Array.isArray(allPosts.response)
           ? allPosts.response.slice(0, 3)
           : undefined;
@@ -56,7 +55,7 @@ export const Post = () => {
             </div>
             <div className="p-card-info">
               <h5>{postInfo.postTitle}</h5>
-              <p>{postInfo.postDescription}</p>
+              <p>{postInfo.shortDescription || "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam eum repellat po"}</p>
               <Link to={`/view-post/${postInfo._id}`}>
                 <h5>Read more</h5>
               </Link>

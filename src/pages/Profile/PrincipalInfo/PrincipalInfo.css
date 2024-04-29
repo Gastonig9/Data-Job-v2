@@ -10,6 +10,13 @@
     position: relative;
 }
 
+.p-info-contain .profile-img h3 {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
 .p-info-contain img {
     width: 150px;
     height: 150px;
