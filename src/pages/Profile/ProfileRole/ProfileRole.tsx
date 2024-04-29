@@ -24,10 +24,8 @@ export const ProfileRole: React.FC<ProfileRoleProps> = ({ uid, role }) => {
     const getJobsSave = async () => {
       try {
         const jobsSave = await new UserService().getUserSavedJobs(uid);
-        console.log(jobsSave);
         if (jobsSave.message && Array.isArray(jobsSave.message)) {
           setjobsSaved(jobsSave.message);
-          console.log(jobsSave)
         }
         
       } catch (error: any) {

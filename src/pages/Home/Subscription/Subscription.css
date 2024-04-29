@@ -1,0 +1,72 @@
+.subscription-cards-contain a {
+  text-decoration: none;
+}
+
+.subscription-cards-contain {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.subscription-cards-contain .s-card {
+  width: 30%;
+  height: 700px;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  padding: 40px 40px;
+  color: #4e5c67;
+}
+
+.subscription-cards-contain .s-card .s-price {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.subscription-cards-contain .s-card ul {
+  width: 100%;
+  display: flex;
+  height: 230px;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+  font-size: 25px;
+}
+
+.subscription-cards-contain .s-card ul .row-benefit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.subscription-cards-contain .s-card ul .row-benefit i {
+  color: green;
+}
+
+.subscription-cards-contain .s-card ul li {
+  list-style: none;
+}
+
+.subscription-cards-contain .s-card .button-choose {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.subscription-cards-contain .s-card .button-choose button {
+  width: 30%;
+  height: 80px;
+  background-color: #ff626d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.subscription-cards-contain .s-card .button-choose button:hover {
+  cursor: pointer;
+  background-color: #4e5c67;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}

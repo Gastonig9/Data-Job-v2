@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AddUserSkill, ChangePassword, ChangeUserData, ChangeUserImage, ChangeUserRole } from "../models/user.model";
+import { AddUserSkill, ChangePassword, ChangeUserData, ChangeUserImage, ChangeUserRole, UserPayment } from "../models/user.model";
 import { BASE_URL } from "../assets/url";
-import { UserResponse } from "../models/response.model";
+import { PaymentResponse, UserResponse } from "../models/response.model";
 
 export class UserService {
     private readonly baseUrl = BASE_URL.prod;
@@ -101,7 +101,7 @@ export class UserService {
             });
             const data = await response.json()
             return data;
-        } catch (error:any) {
+        } catch (error: any) {
             return error;
         }
 
@@ -208,6 +208,32 @@ export class UserService {
                 },
                 body: JSON.stringify(newPassword),
             });
+            const data = await response.json()
+            return data;
+        } catch (error) {
+            return error;
+        }
+    }
+
+    async userPayment(userId: string | undefined, payment: UserPayment): Promise<PaymentResponse> {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/user-payment/${userId}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payment),
+            });
+            const data = await response.json()
+            return data;
+        } catch (error:any) {
+            return error;
+        }
+    }
+
+    async getUserBalance(userId: string | undefined) {
+        try {
+            const response = await fetch(`${this.baseUrl}/user/get-balance/${userId}`);
             const data = await response.json()
             return data;
         } catch (error) {

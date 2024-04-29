@@ -1,0 +1,33 @@
+.payment-contain {
+    height: 850px;
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.successful-pay-contain {
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.successful-pay-contain h1 {
+    color: #4e5c67;
+    font-size: 40px;
+}
+
+.successful-pay-contain img {
+    width: 400px;
+    height: 400px;
+}
+
+.successful-pay-contain a {
+    font-size: 30px;
+    color: #4e5c67;
+}

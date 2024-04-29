@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BASE_URL } from "../assets/url";
-import { CreateComment } from "../models/post.model";
+import { CreateComment, Post } from "../models/post.model";
 import { PostCommentsResponse, PostIndividualResponse, PostResponse } from "../models/response.model";
 
 export class PostService {
@@ -27,10 +27,27 @@ export class PostService {
         }
     }
 
-    async getPostComments(postId:string| undefined): Promise<PostCommentsResponse> {
+    async getPostComments(postId: string | undefined): Promise<PostCommentsResponse> {
         try {
             const response = await fetch(`${this.baseUrl}/post/get-post-comments/${postId}`);
             const data = await response.json()
+            return data;
+        } catch (error: any) {
+            return error;
+        }
+    }
+
+    async createPost(userId: string | undefined, newPost: Post): Promise<PostIndividualResponse> {
+        try {
+            const response = await fetch(`${this.baseUrl}/post/create-post/${userId}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newPost),
+            });
+            const data = await response.json()
+            console.log("la data de creado el post: ", data)
             return data;
         } catch (error: any) {
             return error;

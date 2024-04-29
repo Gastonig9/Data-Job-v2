@@ -8,7 +8,7 @@ interface ChangeSkillsProps {
   uid: string | undefined;
 }
 
-const ProfileSkills: React.FC<ChangeSkillsProps> = ({ uid }) => {
+export const ProfileSkills: React.FC<ChangeSkillsProps> = ({ uid }) => {
   const [skillInput, setSkillInput] = useState<string>("");
   const [skills, setSkills] = useState<string[]>([]);
 
@@ -71,5 +71,3 @@ const ProfileSkills: React.FC<ChangeSkillsProps> = ({ uid }) => {
     </div>
   );
 };
-
-export default ProfileSkills;

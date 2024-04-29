@@ -2,6 +2,7 @@ export interface Post {
     _id?: string;
     postTitle?: string;
     postDescription?: string;
+    shortDescription?: string;
     postAuthor?: string;
     postComments?: [
         {

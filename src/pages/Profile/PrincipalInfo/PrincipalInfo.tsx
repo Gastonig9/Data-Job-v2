@@ -24,6 +24,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
     location: "",
     role: "user",
     skills: [],
+    balance: 0,
   });
   const [showImage, setshowImage] = useState<boolean>(false);
   const [newImage, setnewImage] = useState<ChangeUserImage>({
@@ -34,7 +35,6 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
     const getUser = async () => {
       try {
         const user = await new UserService().getUserProfile(uid);
-        console.log(user)
         setuserProfile(user.userProfile);
       } catch (error) {
         alert(error)
@@ -78,6 +78,7 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
       <div className="p-info-contain">
         <div className="profile-img">
           <img src={userProfile.userImage || imgProfile} alt="" />
+          <h3>${userProfile.balance} available</h3>
           <div className="change-icon" onClick={showImgDetail}>
             <i className="fa-solid fa-pen"></i>
           </div>
@@ -103,7 +104,6 @@ export const PrincipalInfo: React.FC<ChangeDataProps> = ({ uid }) => {
             <p>{userProfile.description || "None description"}</p>
           </div>
           {userProfile.skills && userProfile.skills?.length > 0 && <Skills skills={userProfile.skills}/>}
-          
         </div>
       </div>
     </>

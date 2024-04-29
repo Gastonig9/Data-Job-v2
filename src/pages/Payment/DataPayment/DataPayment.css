@@ -1,0 +1,50 @@
+.payment-data-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  padding: 50px 70px;
+}
+
+.payment-data-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #4e5c67;
+}
+
+.payment-data-form label input {
+  width: 70%;
+  height: 70px;
+  padding: 5px 15px;
+  margin-top: 15px;
+  font-size: 25px;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  border: none;
+  color: #4e5c67;
+}
+
+.payment-data-form button {
+  display: block;
+  width: 20%;
+  height: 60px;
+  font-size: 25px;
+  border: none;
+  background-color: #ff626d;
+  color: white;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.payment-data-form button:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  background-color: #4e5c67;
+}
+
+.payment-data-form p {
+  color: green;
+  font-size: 18px;
+}

@@ -34,7 +34,6 @@ export class AuthService {
 
         if (response.ok) {
             const dataSuccess = await response.json();
-            console.log(dataSuccess)
             return dataSuccess;
         } else {
             const dataError = await response.json();

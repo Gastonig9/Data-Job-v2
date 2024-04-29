@@ -70,3 +70,9 @@
 .blog-post-contain .p-card .p-card-info a h5 {
     color:#f24d49 !important;
 }
+
+.blog-loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

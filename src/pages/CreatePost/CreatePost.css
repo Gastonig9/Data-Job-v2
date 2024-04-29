@@ -1,0 +1,109 @@
+.post-create-form {
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-create-form .input-title {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.post-create-form .input-description {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.post-create-form .button-createPost-send {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.post-create-form .button-createPost-send button {
+    width: 30%;
+    height: 80px;
+    background-color: #ff4d58;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.post-create-form .button-createPost-send button:hover {
+    background-color: #2a3843;
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.post-create-form .input-category-file {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  box-shadow: 2px 5px 12px 2px rgb(227, 226, 226);
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.post-create-form .input-category-file .custom-select {
+  width: 30%;
+  height: 80px;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+  background-color: #ff626d;
+  color: white;
+}
+
+.post-create-form .input-category-file .custom-file-input {
+  width: 25%; 
+  padding: 10px;
+  font-size: 22px;
+  background-color: #ff626d;
+  color: white;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.post-create-form .input-category-file .custom-file-input:hover {
+  background-color: #ff4d58;
+}
+
+.post-create-form .input-description label {
+  width: 100%;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+}
+
+.post-create-form .input-title label {
+  width: 100%;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+}
+
+.post-create-form .input-title input {
+  width: 100%;
+  height: 80px;
+  font-size: 22px;
+  padding: 10px;
+  border: none;
+}
